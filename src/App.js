@@ -8,7 +8,7 @@ function App() {
         <h1>Marton Paulo – Software Developer</h1>
         <img src={gif} className="App-logo" alt="logo" />
         <p>Website under construction...</p>
-        <p>Contact me at <a href="https://www.linkedin.com/in/martonpaulo/" target="_blank">LinkedIn</a></p>
+        <p>Contact me at <a href="https://www.linkedin.com/in/martonpaulo/" target="_blank" rel="noopener">LinkedIn</a></p>
       </header>
     </div>
   );
