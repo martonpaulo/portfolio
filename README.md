@@ -21,6 +21,17 @@ To build the project for production:
 
 1. Run `npm run build`.
 
+## To Do List
+
+- [ ] Enable dark/light mode
+- [ ] Add a language switcher (English, Spanish, Portuguese)
+- [ ] Add a blog
+- [ ] Add a contact email
+- [ ] Add Cloudflare analytics
+- [ ] Add a 404 page
+- [ ] Add live and code links for projects
+- [ ] Improve the overall design
+
 ## Inspirations
 
 Here are some websites that inspired me:
