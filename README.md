@@ -13,7 +13,7 @@ To get started, follow these steps:
 To run the project locally:
 
 1. Run `npm run dev`.
-2. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+2. Open [localhost:3000](localhost:3000) in your browser to see the result.
 
 ## How to Build the Project
 
