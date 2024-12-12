@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Poppins, Roboto_Mono } from "next/font/google";
-import "./globals.css";
+import "@/app/base.css";
 
 const poppins = Poppins({
   variable: "--font-poppins-sans",
   subsets: ["latin"],
-  weight: ["600"],
+  weight: ["400", "600"],
 });
 
 const robotoMono = Roboto_Mono({
