@@ -5,6 +5,7 @@ export default function Home() {
     <div className={styles.wrapper}>
       <h1>Marton Paulo</h1>
       <strong>React Front End Developer</strong>
+      <p>Under construction...</p>
     </div>
   );
 }
