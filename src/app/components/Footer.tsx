@@ -9,7 +9,7 @@ export default function Footer() {
         href="https://github.com/martonpaulo/portfolio"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-deep-purple hover:text-purple transition-colors"
+        className="text-deep-blue-700 hover:text-blue-700 transition-colors hover:font-bold"
       >
         Source Code
       </a>

@@ -18,14 +18,6 @@ export default {
           DEFAULT: "#171717",
           dark: "#ededed",
         },
-        deepPurple: "#7b2cbf",
-        purple: "#9d4edd",
-      },
-      outline: {
-        deepPurple: "2px solid #7b2cbf",
-      },
-      boxShadow: {
-        focus: "0 0 0 2px #7b2cbf",
       },
     },
   },

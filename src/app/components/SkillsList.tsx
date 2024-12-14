@@ -1,23 +1,14 @@
-export default function SkillsList() {
-  const skills = [
-    "HTML 5, CSS 3, JavaScript, TypeScript",
-    "React, Redux, Next.js, Angular 9+, NgRx, RxJS",
-    "Tailwind CSS, Material UI, Bootstrap, Sass",
-    "Git, GitHub, GitLab, GitFlow, Jira, Confluence",
-    "Jest, Cypress, Selenium, Storybook",
-    "Python, Docker, MySQL, MongoDB",
-    "React Native, Expo, Electron.js",
-    "Agile, Scrum, Kanban, XP Programming",
-    "Google Analytics, Accessibility, Web scraping, AI",
-  ];
+import bio from "@/app/data/bio.json";
 
+export default function SkillsList() {
   return (
     <section className="px-4 mt-16">
       <p className="text-base sm:text-lg">My skills: </p>
       <ul>
-        {skills.map((skill) => (
-          <li key={skill} className="font-mono leading-6 list-disc">
-            {skill}
+        {bio.skills.map((skill) => (
+          <li key={skill.category} className="mt-2 list-disc list-inside">
+            <p className="font-semibold inline">{skill.category}: </p>
+            <span>{skill.items.join(", ")}</span>
           </li>
         ))}
       </ul>
