@@ -4,6 +4,7 @@ import projects from "@/app/data/projects.json";
 import ProjectList from "./ProjectList";
 import { PaginationWithLinks } from "@/components/ui/pagination-with-links";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 const POSTS_PER_PAGE = 10;
 
@@ -28,6 +29,14 @@ const getPaginatedProjects = (projects, page, pageSize) => {
 };
 
 export default function Projects() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ProjectsContent />
+    </Suspense>
+  );
+}
+
+function ProjectsContent() {
   const searchParams = useSearchParams();
   const currentPage = parseInt(searchParams.get("page") || "1", 10);
 
