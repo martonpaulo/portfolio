@@ -23,6 +23,11 @@ To build the project for production:
 
 ## To Do List
 
+- [ ] Add a favicon
+- [ ] Add a header with a navigation menu
+- [ ] Add a footer with social media links
+- [ ] Refactor the code to use components
+- [ ] Use a smarter way to use links and page names
 - [ ] Enable dark/light mode
 - [ ] Add a language switcher (English, Spanish, Portuguese)
 - [ ] Add a blog
