@@ -17,7 +17,7 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Marton Paulo",
+  title: "Marton Paulo | Front-End Dev",
   description:
     "Portfolio and personal website of Marton Paulo, Front-End Developer",
 };
