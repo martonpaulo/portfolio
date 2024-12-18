@@ -2,7 +2,7 @@
   {
     "title": "React To-Do List with TypeScript",
     "link": "react-todo-list-typescript",
-    "logo": "https://raw.githubusercontent.com/martonpaulo/react-todo-list/refs/heads/main/public/logo.svg",
+    "logo": "https://raw.githubusercontent.com/martonpaulo/react-todo-list/refs/heads/main/public/rocket.svg",
     "datePublished": "2024-12-18",
     "description": "Simple to-do list application designed to help users manage their tasks efficiently. It allows users to add new tasks, mark or deselect tasks as completed, and delete tasks from the list.",
     "liveLink": "https://martonpaulo.github.io/react-todo-list/",
