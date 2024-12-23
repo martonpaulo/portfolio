@@ -4,6 +4,7 @@ import { Poppins, Roboto_Mono } from "next/font/google";
 import "@/app/global.css";
 
 import AppWrapper from "./components/AppWrapper";
+import { ThemeProvider } from "@/app/components/theme-provider";
 
 const poppins = Poppins({
   variable: "--font-poppins-sans",
@@ -29,8 +30,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="martonpaulo" />
+      </head>
       <body className={`${poppins.variable} ${robotoMono.variable}`}>
-        <AppWrapper>{children}</AppWrapper>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <AppWrapper>{children}</AppWrapper>
+        </ThemeProvider>
       </body>
     </html>
   );

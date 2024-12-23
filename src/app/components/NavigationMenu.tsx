@@ -7,19 +7,37 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { List } from "@phosphor-icons/react/dist/ssr";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import navLinks from "@/app/utils/navLinks";
+import { Menu } from "lucide-react";
+import ThemeToggle from "@/app/components/ThemeToggle";
+import Logo from "@/app/components/Logo";
+import { useTheme } from "next-themes";
 
 export default function NavigationMenu() {
+  const { resolvedTheme } = useTheme();
+  const [themeMode, setThemeMode] = useState("light");
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    setThemeMode(resolvedTheme === "dark" ? "dark" : "light");
+  }, [resolvedTheme]);
 
   const handleLinkClick = () => {
     setIsOpen(false);
   };
 
   return (
-    <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6">
+    <header className="flex h-20 w-full shrink-0 justify-between items-center px-4 gap-6 md:px-6">
+      <Link
+        href="/"
+        aria-label="Home"
+        prefetch={false}
+        className="hidden lg:inline-flex rounded-md bg-white px-4 py-2 transition-colors hover:bg-gray-100 focus:bg-gray-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:focus:bg-gray-800"
+      >
+        <Logo mode={themeMode} size={30} />
+      </Link>
+
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
           <Button
@@ -28,7 +46,7 @@ export default function NavigationMenu() {
             className="lg:hidden"
             aria-label="Toggle navigation menu"
           >
-            <List />
+            <Menu />
           </Button>
         </SheetTrigger>
         <SheetContent side="left">
@@ -40,7 +58,7 @@ export default function NavigationMenu() {
             prefetch={false}
             aria-label="Navigation menu"
           >
-            <List />
+            <Menu />
           </Link>
           <nav className="grid gap-2 py-6">
             {navLinks.map((link) => (
@@ -58,6 +76,7 @@ export default function NavigationMenu() {
           </nav>
         </SheetContent>
       </Sheet>
+
       <nav className="ml-auto hidden lg:flex gap-6">
         {navLinks.map((link) => (
           <Link
@@ -71,6 +90,10 @@ export default function NavigationMenu() {
           </Link>
         ))}
       </nav>
+
+      <div className="transition-all">
+        <ThemeToggle />
+      </div>
     </header>
   );
 }

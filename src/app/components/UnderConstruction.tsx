@@ -1,9 +1,9 @@
-import { Barricade } from "@phosphor-icons/react/dist/ssr";
+import { Construction } from "lucide-react";
 
 export default function UnderConstruction() {
   return (
     <section className="mt-4 pb-16 flex flex-col items-center text-center">
-      <Barricade className="w-24 h-24 mt-4" />
+      <Construction className="w-24 h-24 mt-4" />
       <h2 className="text-xl sm:text-2xl font-bold mt-4">
         This Page is Under Construction!
       </h2>

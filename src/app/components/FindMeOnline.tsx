@@ -1,5 +1,5 @@
-import { CursorClick } from "@phosphor-icons/react/dist/ssr";
 import links from "@/app/data/links.json";
+import { MousePointer2 } from "lucide-react";
 
 export default function FindMeOnline() {
   return (
@@ -16,7 +16,7 @@ export default function FindMeOnline() {
             >
               {link.name}
             </a>
-            <CursorClick className="inline-block w-6 h-6 ml-2" />
+            <MousePointer2 className="inline-block w-6 h-6 ml-2" />
           </li>
         ))}
       </ul>
