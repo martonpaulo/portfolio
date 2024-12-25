@@ -9,6 +9,7 @@
       "category": "Front-End",
       "items": [
         "React",
+        "Next.js",
         "Redux",
         "Material-UI",
         "Tailwind CSS",
@@ -53,7 +54,7 @@
     },
     {
       "category": "Back-End & Databases",
-      "items": ["Node.js", "Express", "NestJS", "MongoDB", "MySQL"]
+      "items": ["Node.js", "Express", "MongoDB", "MySQL"]
     },
     {
       "category": "Mobile & Desktop",

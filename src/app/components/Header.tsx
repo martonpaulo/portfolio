@@ -29,7 +29,7 @@ export default function Header() {
     <header className="flex flex-col items-center mb-8">
       <Cover mode={themeMode} size={size} />
       <p className="text-l sm:text-2xl font-mono text-center">
-        React Front-End Developer
+        Front-End Developer
       </p>
     </header>
   );
