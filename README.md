@@ -31,9 +31,9 @@
 </div>
 
 <div>
-  <a href="https://github.com/martonpaulo/portfolio/actions/workflows/deploy.yml">
+  <a href="https://github.com/martonpaulo/portfolio/actions/workflows/nextjs.yml">
     <img
-      src="https://github.com/martonpaulo/portfolio/actions/workflows/deploy.yml/badge.svg"
+      src="https://github.com/martonpaulo/portfolio/actions/workflows/nextjs.yml/badge.svg"
       alt="Test and Deploy status"
     />
   </a>
