@@ -41,7 +41,7 @@
 
 <br />
 
-Welcome to the personal website and portfolio of **Marton Paulo**, hosted at [martonpaulo.com](https://martonpaulo.com). This website showcases my projects and skills, built with **Next.js**, **React**, **TypeScript**, **TailwindCSS**, and powered by a backend server using **My JSON Server** for data management.
+Welcome to the personal website and portfolio of **Marton Paulo**, hosted at [martonpaulo.com](https://martonpaulo.com). This website showcases my projects and skills, built with **Next.js**, **React**, **TypeScript**, **TailwindCSS**.
 
 ## 🌐 Project Overview
 
