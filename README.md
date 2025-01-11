@@ -34,69 +34,76 @@
   <a href="https://github.com/martonpaulo/portfolio/actions/workflows/deploy.yml">
     <img
       src="https://github.com/martonpaulo/portfolio/actions/workflows/deploy.yml/badge.svg"
-      alt="Test and Deploy status"
+      alt="Test and Deploy Status"
     />
   </a>
 </div>
 
 <br />
 
-Welcome to the personal website and portfolio of **Marton Paulo**, hosted at [martonpaulo.com](https://martonpaulo.com). This website showcases my projects and skills, built with **Next.js**, **React**, **TypeScript**, **TailwindCSS**.
+Welcome to the personal website and portfolio of **Marton Paulo**, hosted at [martonpaulo.com](https://martonpaulo.com). This website showcases my projects and skills, built with **Next.js**, **React**, **TypeScript**, and **TailwindCSS**.
 
 ## 🌐 Project Overview
 
-- **Frontend**: Developed with Next.js, React, TypeScript, and TailwindCSS, focusing on providing a smooth and responsive user experience.
-- **Backend**: Utilizes [My JSON Server](https://my-json-server.typicode.com/martonpaulo/portfolio-server) to provide a simple JSON API, which is consumed by the frontend to display dynamic content like projects and skills.
+- **Frontend**: Built with Next.js, React, TypeScript, and TailwindCSS to provide a smooth and responsive user experience. I use shadcn/ui components and Lucid Icons for enhanced visuals.
+- **Backend**: The site uses Strapi, a headless CMS, built with Node.js and TypeScript.
+- **Deployment**:
+  - Frontend: hosted on GitHub Pages at [martonpaulo.com](https://martonpaulo.com)
+  - Backend: hosted on Railway at [strapi.martonpaulo.com](https://strapi.martonpaulo.com)
+  - Database: utilizes AWS RDS
+  - Domain: managed through Hostinger
+  - Professional Email: powered by Zoho Mail at [info@martonpaulo.com](mailto:info@martonpaulo.com)
 
 ## 🚀 Getting Started
 
 To start working on this project, clone the repository and install the dependencies:
 
 ```bash
-git clone https://github.com/martonpaulo/pomodoro-timer.git
-cd pomodoro-timer
+git clone https://github.com/martonpaulo/portfolio.git
+cd portfolio
 npm install
 ```
 
 ## 📜 Available Scripts
 
-In the project directory, you can run the following scripts:
+In the project directory, you can run the following commands:
 
-- `npm run dev` - Start the development server at `http://localhost:3000`
-- `npm run start` - Start the production server at `http://localhost:3000`
-- `npm run build` - Build the project for production, outputting to the `dist` folder
-- `npm run lint` - Lint the code using ESLint
+- `npm run dev`: Starts the development server at `http://localhost:3000`
+- `npm run start`: Starts the production server at `http://localhost:3000`
+- `npm run build`: Builds the project for production, outputting to the `dist` folder
+- `npm run lint`: Lints the code using ESLint
 
 ## 📋 To Do List
 
 Bugs and issues to fix:
 
 - [ ] Fix hydration error in the console
-- [ ] Resolve favicon errors with Real Favicon Generator
+- [ ] Resolve favicon issues with Real Favicon Generator
 
 Planned features and improvements:
 
 - [x] Connect to the backend server for dynamic data fetching
-- ~~[ ] Add a language switcher for English, Spanish, and Portuguese~~
+- [x] ~~Add a language switcher for English, Spanish, and Portuguese~~
 - [x] Add a blog or fetch posts from Medium and LinkedIn
 - [x] Include contact email: info@martonpaulo.com
-- [ ] Reorganize the Next.js code for better structure
-- [ ] Implement SEO optimizations for improved search engine ranking
+- [x] Create a 404 page
+- [x] Implement smarter linking with URL redirects (e.g., [martonpaulo.com/projects/genius-game/live](http://martonpaulo.com/projects/genius-game/live))
+- [ ] Add a mentors page
+- [ ] Reorganize the Next.js code for a better structure
+- [ ] Implement SEO optimizations for better search engine ranking
 - [ ] Create a footer with social media links
 - [ ] Refactor code to use reusable components
-- [ ] Implement smarter linking with URL redirects (e.g., [martonpaulo.com/projects/genius-game/live](http://martonpaulo.com/projects/genius-game/live))
-- [ ] Add search and pagination for projects
+- [ ] Add search and pagination for projects:
   - [ ] Project tag search
   - [ ] General search
-  - [ ] Pagination (limit 10 projects per page)
+  - [ ] Pagination (limit to 10 projects per page)
 - [ ] Integrate Cloudflare Analytics
 - [ ] Add Google Analytics to track traffic sources (LinkedIn, GitHub, resume, email signature, etc.)
-- [ ] Create a 404 page
-- [ ] Improve the design with personal photos and enhanced layout
+- [ ] Enhance the design with personal photos and improved layout
 
 ## 🌟 Inspirations
 
-These are some of the websites that inspired the design and functionality of this project:
+Here are some websites that inspired the design and functionality of this project:
 
 - [Duse Kenç](https://dusekenc.com/)
 - [Tamal Sen](https://tamalsen.dev/)
