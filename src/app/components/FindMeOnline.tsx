@@ -1,7 +1,7 @@
 "use client";
 
 import { useLinks } from "@/hooks/useLinks";
-import Loader from "@/app/[lang]/components/Loader";
+import Loader from "@/app/components/Loader";
 import { MousePointer2 } from "lucide-react";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

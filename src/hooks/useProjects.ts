@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchAPI } from "@/app/[lang]/utils/fetch-api";
+import { fetchAPI } from "@/app/utils/fetch-api";
 
 export function useProjects() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

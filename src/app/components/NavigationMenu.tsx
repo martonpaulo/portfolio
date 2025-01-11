@@ -8,20 +8,19 @@ import {
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import navLinks from "@/app/[lang]/utils/navLinks";
+import navLinks from "@/app/utils/navLinks";
 import { Menu } from "lucide-react";
-import ThemeToggle from "@/app/[lang]/components/ThemeToggle";
-import Logo from "@/app/[lang]/components/Logo";
+import ThemeToggle from "@/app/components/ThemeToggle";
+import Logo from "@/app/components/Logo";
 import { useTheme } from "next-themes";
 
 export default function NavigationMenu() {
-  const { resolvedTheme } = useTheme();
-  const [themeMode, setThemeMode] = useState("light");
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    setThemeMode(resolvedTheme === "dark" ? "dark" : "light");
-  }, [resolvedTheme]);
+    setTheme(resolvedTheme === "dark" ? "dark" : "light");
+  }, [resolvedTheme, setTheme]);
 
   const handleLinkClick = () => {
     setIsOpen(false);
@@ -35,7 +34,7 @@ export default function NavigationMenu() {
         prefetch={false}
         className="hidden lg:inline-flex rounded-md bg-white px-4 py-2 transition-colors hover:bg-gray-100 focus:bg-gray-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:focus:bg-gray-800"
       >
-        <Logo mode={themeMode} size={30} />
+        <Logo mode={theme} size={30} />
       </Link>
 
       <Sheet open={isOpen} onOpenChange={setIsOpen}>

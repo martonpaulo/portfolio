@@ -76,15 +76,15 @@ Bugs and issues to fix:
 
 Planned features and improvements:
 
-- [ ] Connect to the backend server for dynamic data fetching
+- [x] Connect to the backend server for dynamic data fetching
+- ~~[ ] Add a language switcher for English, Spanish, and Portuguese~~
+- [x] Add a blog or fetch posts from Medium and LinkedIn
+- [x] Include contact email: info@martonpaulo.com
 - [ ] Reorganize the Next.js code for better structure
 - [ ] Implement SEO optimizations for improved search engine ranking
-- [ ] Add a language switcher for English, Spanish, and Portuguese
 - [ ] Create a footer with social media links
 - [ ] Refactor code to use reusable components
 - [ ] Implement smarter linking with URL redirects (e.g., [martonpaulo.com/projects/genius-game/live](http://martonpaulo.com/projects/genius-game/live))
-- [ ] Add a blog or fetch posts from Medium and LinkedIn
-- [ ] Include contact email: info@martonpaulo.com
 - [ ] Add search and pagination for projects
   - [ ] Project tag search
   - [ ] General search

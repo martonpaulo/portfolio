@@ -4,12 +4,10 @@ import { Poppins, Roboto_Mono } from "next/font/google";
 import { getStrapiURL } from "./utils/api-helpers";
 import { fetchAPI } from "./utils/fetch-api";
 
-import { i18n } from "../../../i18n-config";
-
 import "@/app/global.css";
 
 import AppWrapper from "./components/AppWrapper";
-import { ThemeProvider } from "@/app/[lang]/components/theme-provider";
+import { ThemeProvider } from "@/app/components/theme-provider";
 
 const poppins = Poppins({
   variable: "--font-poppins-sans",
@@ -91,8 +89,4 @@ export default async function RootLayout({
       </body>
     </html>
   );
-}
-
-export async function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }));
 }

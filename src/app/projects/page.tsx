@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import ProjectList from "./ProjectList";
 import { PaginationWithLinks } from "@/components/ui/pagination-with-links";
 import { useProjects } from "@/hooks/useProjects";
-import Loader from "@/app/[lang]/components/Loader";
+import Loader from "@/app/components/Loader";
 
 const POSTS_PER_PAGE = 10;
 
