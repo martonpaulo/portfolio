@@ -1,4 +1,4 @@
-name: Deploy Next.js site to Pages
+name: Deploy Next site to GitHub Pages
 
 on:
   push:
@@ -31,21 +31,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "yarn"
+          cache: "npm"
 
       - name: Cache Next.js build
         uses: actions/cache@v4
         with:
           path: .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock', '**/package-lock.json', 'package.json', 'next.config.js') }}
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', 'package.json', 'next.config.js') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-
 
       - name: Install dependencies
-        run: yarn install
+        run: npm ci
 
       - name: Build Next.js project
-        run: yarn build
+        run: npm run build
         env:
           NEXT_PUBLIC_STRAPI_API_TOKEN: ${{ secrets.NEXT_PUBLIC_STRAPI_API_TOKEN }}
           NEXT_PUBLIC_STRAPI_API_URL: ${{ secrets.NEXT_PUBLIC_STRAPI_API_URL }}
