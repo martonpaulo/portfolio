@@ -44,6 +44,7 @@ function ProjectsContent() {
 
 // Utility: Get paginated data based on current page
 const getPaginatedProjects = (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   projects: any[],
   page: number,
   pageSize: number

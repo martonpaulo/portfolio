@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { fetchAPI } from "@/app/[lang]/utils/fetch-api";
 
 export function useLinks() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [data, setData] = useState<any[]>([]);
   const [isLoading, setLoading] = useState(true);
 

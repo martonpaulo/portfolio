@@ -4,6 +4,7 @@ import { useLinks } from "@/hooks/useLinks";
 import Loader from "@/app/[lang]/components/Loader";
 import { MousePointer2 } from "lucide-react";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const LinkList = ({ data }: { data: any[] }) => (
   <ul className="text-lg sm:text-2xl flex flex-col gap-2">
     {data.map(

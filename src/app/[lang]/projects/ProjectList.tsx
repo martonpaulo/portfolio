@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState } from "react";
@@ -64,7 +65,7 @@ export default function ProjectList({ projects }: any) {
             </a>
           </div>
           <div className="flex flex-wrap space-x-2 mb-4">
-            {project.techStack.map((tech) => (
+            {project.techStack.map((tech: any) => (
               <span
                 key={tech.id}
                 className="bg-gray-200 text-gray-800 px-2 py-1 rounded"
@@ -73,7 +74,7 @@ export default function ProjectList({ projects }: any) {
               </span>
             ))}
 
-            {project.tags.map((tag) => (
+            {project.tags.map((tag: any) => (
               <span
                 key={tag.id}
                 className="bg-gray-200 text-gray-800 px-2 py-1 rounded"
