@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import Cover from "@/app/components/Cover";
+import Cover from "@/app/[lang]/components/Cover";
 
 export default function Header() {
   const { resolvedTheme } = useTheme();

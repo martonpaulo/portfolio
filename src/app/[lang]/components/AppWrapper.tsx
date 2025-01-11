@@ -2,9 +2,9 @@
 
 import { ReactNode, useMemo } from "react";
 import { usePathname } from "next/navigation";
-import Footer from "@/app/components/Footer";
-import NavigationMenu from "@/app/components/NavigationMenu";
-import navLinks from "@/app/utils/navLinks";
+import Footer from "@/app/[lang]/components/Footer";
+import NavigationMenu from "@/app/[lang]/components/NavigationMenu";
+import navLinks from "@/app/[lang]/utils/navLinks";
 
 interface AppWrapperProps {
   children: ReactNode;

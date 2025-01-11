@@ -1,6 +1,6 @@
 import TextContainer from "../components/TextContainer";
 
-import bio from "@/app/data/bio.json";
+import bio from "@/app/[lang]/data/bio.json";
 
 export default function MoreAboutMe() {
   return (

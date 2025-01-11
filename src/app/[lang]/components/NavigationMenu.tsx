@@ -8,10 +8,10 @@ import {
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import navLinks from "@/app/utils/navLinks";
+import navLinks from "@/app/[lang]/utils/navLinks";
 import { Menu } from "lucide-react";
-import ThemeToggle from "@/app/components/ThemeToggle";
-import Logo from "@/app/components/Logo";
+import ThemeToggle from "@/app/[lang]/components/ThemeToggle";
+import Logo from "@/app/[lang]/components/Logo";
 import { useTheme } from "next-themes";
 
 export default function NavigationMenu() {

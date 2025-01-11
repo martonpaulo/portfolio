@@ -3,27 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 
-interface Project {
-  title: string;
-  description: string;
-  datePublished: string;
-  liveLink: string;
-  sourceCode: string;
-  technologies: string[];
-  media: string;
-  logo: string;
-}
-
-interface ProjectListProps {
-  projects: Project[];
-}
-
-export default function ProjectList({ projects }: ProjectListProps) {
+export default function ProjectList({ projects }: any) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const openModal = (image: string) => {
-    // Explicitly type the 'image' parameter
     setSelectedImage(image);
     setIsModalOpen(true);
   };
@@ -35,34 +19,34 @@ export default function ProjectList({ projects }: ProjectListProps) {
 
   return (
     <>
-      {projects.map((project) => (
+      {projects.map((project: any) => (
         <div
-          key={project.title}
+          key={project.name}
           className="mb-8 p-4 border border-gray-200 rounded-lg"
         >
-          {project.logo && (
+          {project.logoUrl && (
             <Image
-              src={project.logo}
-              alt={`${project.title} logo`}
+              src={project.logoUrl}
+              alt={`${project.name} logo`}
               width={64}
               height={64}
               className="w-16 h-16 mb-4"
             />
           )}
-          <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
+          <h2 className="text-2xl font-bold mb-2">{project.name}</h2>
           <p className="text-gray-600 mb-2">
             Published on:{" "}
-            {new Date(project.datePublished).toLocaleDateString("en-US", {
+            {new Date(project.publishedDate).toLocaleDateString("en-US", {
               year: "numeric",
               month: "long",
               day: "numeric",
             })}
           </p>
-          <p className="mb-4">{project.description}</p>
+          <p className="mb-4">{project.summary}</p>
           <div className="flex space-x-4 mb-4">
-            {project.liveLink && (
+            {project.liveDemoUrl && (
               <a
-                href={project.liveLink}
+                href={project.liveDemoUrl}
                 className="text-blue-500 hover:text-purple-500 hover:font-bold"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -71,7 +55,7 @@ export default function ProjectList({ projects }: ProjectListProps) {
               </a>
             )}
             <a
-              href={project.sourceCode}
+              href={project.repositoryUrl}
               className="text-blue-500 hover:text-purple-500 hover:font-bold"
               target="_blank"
               rel="noopener noreferrer"
@@ -80,23 +64,32 @@ export default function ProjectList({ projects }: ProjectListProps) {
             </a>
           </div>
           <div className="flex flex-wrap space-x-2 mb-4">
-            {project.technologies.map((tech) => (
+            {project.techStack.map((tech) => (
               <span
-                key={tech}
+                key={tech.id}
                 className="bg-gray-200 text-gray-800 px-2 py-1 rounded"
               >
-                #{tech}
+                #{tech.name}
+              </span>
+            ))}
+
+            {project.tags.map((tag) => (
+              <span
+                key={tag.id}
+                className="bg-gray-200 text-gray-800 px-2 py-1 rounded"
+              >
+                #{tag.name}
               </span>
             ))}
           </div>
-          {project.media && (
+          {project.demoMediaUrl && (
             <Image
-              src={project.media}
-              alt={`${project.title} media`}
+              src={project.demoMediaUrl}
+              alt={`${project.name} media`}
               width={256} // Adjust width and height as needed
               height={256}
               className="w-64 h-64 object-cover cursor-pointer"
-              onClick={() => openModal(project.media)}
+              onClick={() => openModal(project.demoMediaUrl)}
             />
           )}
         </div>
@@ -114,7 +107,7 @@ export default function ProjectList({ projects }: ProjectListProps) {
             <Image
               src={selectedImage}
               alt="Selected media"
-              width={800} // Adjust for modal image size
+              width={800}
               height={800}
               className="max-w-full max-h-full mb-4"
             />
