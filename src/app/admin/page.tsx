@@ -8,7 +8,7 @@ const AdminPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("https://strapi.martonpaulo.com");
+    router.push("https://directus.martonpaulo.com");
   }, [router]);
 
   return <Loader />;

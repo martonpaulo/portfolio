@@ -1,13 +1,15 @@
+import ReactMarkdown from "react-markdown";
+
 interface TextContainerProps {
-  text: string[];
+  markdown: string;
 }
 
-export default function TextContainer({ text }: TextContainerProps) {
+export default function TextContainer({ markdown }: TextContainerProps) {
   return (
     <section className="px-4">
-      {text.map((line) => (
-        <p className="text-base sm:text-lg mb-6" key={line}>
-          {line}
+      {markdown.split("\n").map((line, index) => (
+        <p key={index} className="mt-4">
+          <ReactMarkdown>{line}</ReactMarkdown>
         </p>
       ))}
     </section>

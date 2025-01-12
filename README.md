@@ -46,10 +46,10 @@ Welcome to the personal website and portfolio of **Marton Paulo**, hosted at [ma
 ## 🌐 Project Overview
 
 - **Frontend**: Built with Next.js, React, TypeScript, and TailwindCSS to provide a smooth and responsive user experience. I use shadcn/ui components and Lucid Icons for enhanced visuals.
-- **Backend**: The site uses Strapi, a headless CMS, built with Node.js and TypeScript.
+- **Backend**: The site uses Directus, a headless CMS, built with Docker.
 - **Deployment**:
   - Frontend: hosted on GitHub Pages at [martonpaulo.com](https://martonpaulo.com)
-  - Backend: hosted on Railway at [strapi.martonpaulo.com](https://strapi.martonpaulo.com)
+  - Backend: hosted on Railway at [martonpaulo.com/admin](https://directus.martonpaulo.com)
   - Database: utilizes AWS RDS
   - Domain: managed through Hostinger
   - Professional Email: powered by Zoho Mail at [info@martonpaulo.com](mailto:info@martonpaulo.com)
