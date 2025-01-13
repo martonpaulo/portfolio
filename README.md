@@ -50,7 +50,7 @@ Welcome to the personal website and portfolio of **Marton Paulo**, hosted at [ma
 - **Deployment**:
   - Frontend: hosted on GitHub Pages at [martonpaulo.com](https://martonpaulo.com)
   - Backend: hosted on Railway at [martonpaulo.com/admin](https://directus.martonpaulo.com)
-  - Database: utilizes AWS RDS
+  - Database: utilizes PostgreSQL hosted on AWS RDS
   - Domain: managed through Hostinger
   - Professional Email: powered by Zoho Mail at [info@martonpaulo.com](mailto:info@martonpaulo.com)
 
