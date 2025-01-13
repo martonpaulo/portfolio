@@ -93,7 +93,7 @@ Planned features and improvements:
 - [x] Add a blog or fetch posts from Medium and LinkedIn
 - [x] Include contact email: info@martonpaulo.com
 - [x] Create a 404 page
-- [x] Implement smarter linking with URL redirects (e.g., [martonpaulo.com/projects/genius-game/live](http://martonpaulo.com/projects/genius-game/live))
+- [ ] Implement smarter linking with URL redirects (e.g., [martonpaulo.com/projects/genius-game/live](http://martonpaulo.com/projects/genius-game/live))
 - [ ] Use the collection "tech_stack" to fetch the technologies used in each project
 - [ ] Understand the "sort" field in Directus
 - [ ] Add a mentors page

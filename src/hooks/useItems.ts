@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState, useRef } from "react";
 import { fetchItems } from "@/lib/fetch-api";
 import { FetchStatusEnum } from "@/types/FetchStatus";
