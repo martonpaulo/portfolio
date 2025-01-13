@@ -79,6 +79,12 @@ Bugs and issues to fix:
 
 - [ ] Fix hydration error in the console
 - [ ] Resolve favicon issues with Real Favicon Generator
+- [ ] Fix CORS problem
+- [ ] Change AWS admin password
+- [ ] Change DB name
+- [ ] Fix error while fetching data from the API
+- [ ] Refactor and remove warnings from the hooks
+- [ ] Fix useSkills hook to fetch data from the API
 
 Planned features and improvements:
 
@@ -88,8 +94,11 @@ Planned features and improvements:
 - [x] Include contact email: info@martonpaulo.com
 - [x] Create a 404 page
 - [x] Implement smarter linking with URL redirects (e.g., [martonpaulo.com/projects/genius-game/live](http://martonpaulo.com/projects/genius-game/live))
+- [ ] Use the collection "tech_stack" to fetch the technologies used in each project
+- [ ] Understand the "sort" field in Directus
 - [ ] Add a mentors page
 - [ ] Reorganize the Next.js code for a better structure
+- [ ] Automatically reorder imports
 - [ ] Implement SEO optimizations for better search engine ranking
 - [ ] Create a footer with social media links
 - [ ] Refactor code to use reusable components

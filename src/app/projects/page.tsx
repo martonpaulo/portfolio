@@ -3,9 +3,11 @@
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import ProjectList from "./ProjectList";
-import { PaginationWithLinks } from "@/components/ui/pagination-with-links";
-import { useProjects } from "@/hooks/useProjects";
-import Loader from "@/app/components/Loader";
+import { PaginationWithLinks } from "@/app/components/ui/pagination-with-links";
+import { useProjects } from "@/hooks/useItems";
+import Loader from "@/app/components/common/Loader";
+import FetchError from "../components/common/FetchError";
+import { FetchStatusEnum } from "@/types/FetchStatus";
 
 const POSTS_PER_PAGE = 10;
 
@@ -20,15 +22,21 @@ export default function ProjectsPage() {
 function ProjectsContent() {
   const searchParams = useSearchParams();
   const currentPage = parseInt(searchParams.get("page") || "1", 10);
-  const { data, isLoading } = useProjects();
-
-  if (isLoading) return <Loader />;
+  const { projects, status } = useProjects();
 
   const paginatedProjects = getPaginatedProjects(
-    data,
+    projects,
     currentPage,
     POSTS_PER_PAGE
   );
+
+  if (status === FetchStatusEnum.LOADING) {
+    return <Loader />;
+  }
+
+  if (status === FetchStatusEnum.ERROR) {
+    return <FetchError />;
+  }
 
   return (
     <div className="max-w-screen-lg mx-auto p-4">
@@ -36,7 +44,7 @@ function ProjectsContent() {
       <PaginationWithLinks
         page={currentPage}
         pageSize={POSTS_PER_PAGE}
-        totalCount={data.length}
+        totalCount={projects.length}
       />
     </div>
   );

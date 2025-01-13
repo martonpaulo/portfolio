@@ -22,7 +22,7 @@ export default function ProjectList({ projects }: any) {
     <>
       {projects.map((project: any) => (
         <div
-          key={project.name}
+          key={project.id}
           className="mb-8 p-4 border border-gray-200 rounded-lg"
         >
           {project.logoUrl && (
@@ -41,9 +41,10 @@ export default function ProjectList({ projects }: any) {
               year: "numeric",
               month: "long",
               day: "numeric",
+              timeZone: "UTC",
             })}
           </p>
-          <p className="mb-4">{project.summary}</p>
+          <p className="mb-4">{project.description}</p>
           <div className="flex space-x-4 mb-4">
             {project.liveDemoUrl && (
               <a
@@ -65,21 +66,22 @@ export default function ProjectList({ projects }: any) {
             </a>
           </div>
           <div className="flex flex-wrap space-x-2 mb-4">
-            {project.techStack.map((tech: any) => (
+            {project.techStack.map((tech: string) => (
               <span
-                key={tech.id}
+                key={tech}
                 className="bg-gray-200 text-gray-800 px-2 py-1 rounded"
               >
-                #{tech.name}
+                #{tech}
               </span>
             ))}
-
-            {project.tags.map((tag: any) => (
+          </div>
+          <div className="flex flex-wrap space-x-2 mb-4">
+            {project.tags.map((tag: string) => (
               <span
-                key={tag.id}
+                key={tag}
                 className="bg-gray-200 text-gray-800 px-2 py-1 rounded"
               >
-                #{tag.name}
+                #{tag}
               </span>
             ))}
           </div>
@@ -108,8 +110,8 @@ export default function ProjectList({ projects }: any) {
             <Image
               src={selectedImage}
               alt="Selected media"
-              width={800}
-              height={800}
+              width={400}
+              height={400}
               className="max-w-full max-h-full mb-4"
             />
             <button

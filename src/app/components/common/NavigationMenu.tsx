@@ -4,15 +4,15 @@ import {
   SheetContent,
   SheetTitle,
   SheetDescription,
-} from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
+} from "@/app/components/ui/sheet";
+import { Button } from "@/app/components/ui/button";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import navLinks from "@/app/utils/navLinks";
 import { Menu } from "lucide-react";
-import ThemeToggle from "@/app/components/ThemeToggle";
-import Logo from "@/app/components/Logo";
+import ThemeToggle from "@/app/components/common/ThemeToggle";
+import Logo from "@/app/components/common/Logo";
 import { useTheme } from "next-themes";
+import { pagesMetadata } from "@/utils/pages-metadata";
 
 export default function NavigationMenu() {
   const { theme, setTheme, resolvedTheme } = useTheme();
@@ -60,16 +60,16 @@ export default function NavigationMenu() {
             <Menu />
           </Link>
           <nav className="grid gap-2 py-6">
-            {navLinks.map((link) => (
+            {Object.values(pagesMetadata).map((page) => (
               <Link
-                key={link.label}
-                href={link.href}
+                key={page.label}
+                href={page.path}
                 className="flex w-full items-center py-2 text-lg font-semibold"
                 prefetch={false}
-                aria-label={link.label}
+                aria-label={page.label}
                 onClick={handleLinkClick}
               >
-                {link.label}
+                {page.label}
               </Link>
             ))}
           </nav>
@@ -77,15 +77,15 @@ export default function NavigationMenu() {
       </Sheet>
 
       <nav className="ml-auto hidden lg:flex gap-6">
-        {navLinks.map((link) => (
+        {Object.values(pagesMetadata).map((page) => (
           <Link
-            key={link.label}
-            href={link.href}
+            key={page.label}
+            href={page.path}
             className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
             prefetch={false}
-            aria-label={link.label}
+            aria-label={page.label}
           >
-            {link.label}
+            {page.label}
           </Link>
         ))}
       </nav>
