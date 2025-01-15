@@ -4,8 +4,6 @@
 
 Welcome to my portfolio hosted at [martonpaulo.com](https://www.martonpaulo.com). This website showcases my projects, skills, and professional journey. Built with modern technologies and optimized for performance, it reflects my passion for front-end development.
 
----
-
 ## 🌐 Project Overview
 
 ### Frontend
@@ -18,15 +16,16 @@ Welcome to my portfolio hosted at [martonpaulo.com](https://www.martonpaulo.com)
 
 ### Backend
 
-- **CMS**: Directus (Dockerized Headless CMS)
+- **CMS**: Directus, dockerized Headless CMS
 - **Database**: PostgreSQL hosted on AWS RDS
 
-### Deployment
+### Hosting and Integrations
 
 - **Frontend**: hosted on GitHub Pages ([martonpaulo.com](https://www.martonpaulo.com))
 - **Backend**: hosted on Railway ([directus.martonpaulo.com](https://directus.martonpaulo.com))
 - **Domain Management**: Hostinger
 - **Email**: professional email powered by Zoho Mail ([info@martonpaulo.com](mailto:info@martonpaulo.com))
+- **Analytics and Link Management**: Google Analytics and Bitly
 
 ## 🚀 Getting Started
 
@@ -48,8 +47,6 @@ npm install
 - `npm run dev`: start the development server at `http://localhost:3000`
 - `npm run build`: build the project for production
 - `npm run lint`: lint the codebase with ESLint
-
----
 
 ## 📋 To Do List
 
@@ -78,6 +75,7 @@ npm install
 - [x] automatically reorder imports
 - [x] create a Projects page
 - [x] add a footer with social media links
+- [x] integrate Google Analytics for all shared links
 - [ ] add links order
 - [ ] add Projects skeleton loader
 - [ ] learn about Cloudnary for image optimization
@@ -95,10 +93,7 @@ npm install
 - [ ] implement a work timeline
 - [ ] improve SEO with metadata from Directus API
 - [ ] integrate Cloudflare Analytics
-- [ ] integrate Google Analytics for all shared links
 - [ ] enhance the design with personal photos
-
----
 
 ## 🌟 Inspirations
 
@@ -113,8 +108,6 @@ The design and functionality of this portfolio were inspired by:
 - [Ramma Heshwari](https://www.rammaheshwari.com/)
 - [Matt Farley](https://mattfarley.ca/)
 - [Frozen Hearth](https://frozenhearth.vercel.app/)
-
----
 
 ## 📄 License
 

@@ -32,12 +32,17 @@ export function ProjectItem({ project }: ProjectItemProps) {
               )}
               <div className="media-content">
                 <p className="title is-4">{project.name}</p>
-                <time
-                  dateTime={project.publishedDate}
-                  className="subtitle is-6"
-                >
-                  {publishedDate}
-                </time>
+                {project.publishedDate && (
+                  <time
+                    dateTime={project.publishedDate}
+                    className="subtitle is-6"
+                  >
+                    {publishedDate}
+                  </time>
+                )}
+                {!project.publishedDate && (
+                  <p className="subtitle is-6">Not published yet</p>
+                )}
               </div>
             </div>
 

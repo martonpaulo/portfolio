@@ -1,5 +1,6 @@
 import "@/styles/global.scss";
 
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Fira_Code, Poppins } from "next/font/google";
 
@@ -67,6 +68,7 @@ export default function RootLayout({
           <Footer />
         </ReactQueryProvider>
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
     </html>
   );
 }
