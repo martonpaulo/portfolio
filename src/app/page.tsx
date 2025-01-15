@@ -1,22 +1,52 @@
 "use client";
 
-import Header from "@/app/components/common/Header";
-import SkillsList from "@/app/components/SkillsList";
-import UnderConstruction from "@/app/components/UnderConstruction";
-import FindMe from "@/app/components/common/FindMe";
-import TextContainer from "@/app/components/common/TextContainer";
-import { useText } from "@/hooks/useSingleton";
+import { useQuery } from "@tanstack/react-query";
+
+import { LinksBox } from "@/components/LinksBox";
+import { MarkdownContainer } from "@/components/MarkdownContainer";
+import { getLinks, getText } from "@/utils/fetchApi";
 
 export default function Home() {
-  const { content, status } = useText("summary");
+  const {
+    data: summary,
+    isLoading: summaryIsLoading,
+    isError: summaryHasError,
+  } = useQuery({
+    queryKey: ["summary"],
+    queryFn: async () => await getText("summary"),
+  });
+
+  const {
+    data: links,
+    isLoading: linksIsLoading,
+    isError: linksHasError,
+  } = useQuery({
+    queryKey: ["links"],
+    queryFn: async () => await getLinks(),
+  });
 
   return (
     <>
-      <Header />
-      <UnderConstruction />
-      <TextContainer markdown={content} status={status} />
-      <SkillsList />
-      <FindMe />
+      <section className="section is-medium">
+        <div className="content">
+          <MarkdownContainer
+            markdown={summary || ""}
+            collection="summary"
+            isLoading={summaryIsLoading}
+            isError={summaryHasError}
+          />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="content buttons is-centered">
+          <LinksBox
+            links={links || []}
+            isLoading={linksIsLoading}
+            isError={linksHasError}
+          />
+        </div>
+      </section>
     </>
   );
 }

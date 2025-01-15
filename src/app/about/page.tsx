@@ -1,24 +1,51 @@
 "use client";
 
-import TextContainer from "@/app/components/common/TextContainer";
+import { useQuery } from "@tanstack/react-query";
 
-import { useText } from "@/hooks/useSingleton";
+import { MarkdownContainer } from "@/components/MarkdownContainer";
+import { getText } from "@/utils/fetchApi";
 
-export default function AboutMe() {
-  const { content: interestsContent, status: interestsStatus } =
-    useText("interests");
-  const { content: summaryContent, status: summaryStatus } = useText("summary");
+const SUMMARY_COLLECTION = "summary";
+const INTERESTS_COLLECTION = "interests";
+
+export default function About() {
+  const {
+    data: summaryData,
+    isLoading: summaryIsLoading,
+    isError: summaryHasError,
+  } = useQuery({
+    queryKey: [SUMMARY_COLLECTION],
+    queryFn: async () => await getText(SUMMARY_COLLECTION),
+  });
+
+  const {
+    data: interestsData,
+    isLoading: interestsIsLoading,
+    isError: interestsHasError,
+  } = useQuery({
+    queryKey: [INTERESTS_COLLECTION],
+    queryFn: async () => await getText(INTERESTS_COLLECTION),
+  });
 
   return (
-    <div className="space-y-8">
-      <section className="p-4 rounded-lg">
-        <h2 className="text-xl font-bold mb-2">Summary</h2>
-        <TextContainer markdown={summaryContent} status={summaryStatus} />
-      </section>
-      <section className="p-4 rounded-lg">
-        <h2 className="text-xl font-bold mb-2">Interests</h2>
-        <TextContainer markdown={interestsContent} status={interestsStatus} />
-      </section>
-    </div>
+    <section className="section is-medium">
+      <div className="content">
+        <h1>Summary</h1>
+        <MarkdownContainer
+          markdown={summaryData || ""}
+          collection={SUMMARY_COLLECTION}
+          isLoading={summaryIsLoading}
+          isError={summaryHasError}
+        />
+
+        <h1>Interests</h1>
+        <MarkdownContainer
+          markdown={interestsData || ""}
+          collection={INTERESTS_COLLECTION}
+          isLoading={interestsIsLoading}
+          isError={interestsHasError}
+        />
+      </div>
+    </section>
   );
 }

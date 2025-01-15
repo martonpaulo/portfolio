@@ -1,4 +1,4 @@
-export type SeoMetadataType = {
+export type MetadataType = {
   title: string;
   description: string;
   keywords: string;

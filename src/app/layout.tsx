@@ -1,27 +1,28 @@
+import "@/styles/global.scss";
+
 import type { Metadata } from "next";
-import { Poppins, Roboto_Mono } from "next/font/google";
+import { Fira_Code, Poppins } from "next/font/google";
 
-import "@/app/global.css";
-
-import AppWrapper from "./components/common/AppWrapper";
-import { ThemeProvider } from "@/app/components/common/ThemeProvider";
-
-import { fetchSingleton } from "../lib/fetch-api";
-import type { SeoMetadataType } from "../types/SeoMetadata";
+import { Navbar } from "@/components/Navbar";
+import type { MetadataType } from "@/types/metadata";
+import { fetchSingleton } from "@/utils/fetchApi";
+import ReactQueryProvider from "@/utils/queryProvider";
 
 const poppins = Poppins({
-  variable: "--font-poppins-sans",
+  variable: "--font-poppins",
+  weight: ["400", "700"],
   subsets: ["latin"],
-  weight: ["400", "600"],
+  display: "swap",
 });
 
-const robotoMono = Roboto_Mono({
-  variable: "--font-roboto-mono",
+const firaCode = Fira_Code({
+  variable: "--font-fira-code",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metadata = await fetchSingleton<SeoMetadataType>("metadata");
+  const metadata = await fetchSingleton<MetadataType>("metadata");
 
   return {
     title: metadata?.title || "Marton Paulo | Dev Portfolio",
@@ -56,15 +57,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${robotoMono.variable}`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <AppWrapper>{children}</AppWrapper>
-        </ThemeProvider>
+      <body className={`${poppins.variable} ${firaCode.variable}`}>
+        <div className="container is-max-widescreen">
+          <Navbar />
+          <ReactQueryProvider>{children}</ReactQueryProvider>
+        </div>
       </body>
     </html>
   );

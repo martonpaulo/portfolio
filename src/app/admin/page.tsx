@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Loader from "../components/common/Loader";
+import { useEffect } from "react";
 
 const AdminPage = () => {
   const router = useRouter();
@@ -11,7 +10,11 @@ const AdminPage = () => {
     router.push("https://directus.martonpaulo.com");
   }, [router]);
 
-  return <Loader />;
+  return (
+    <section className="section is-medium">
+      <progress className="progress is-medium is-primary" max="100" />
+    </section>
+  );
 };
 
 export default AdminPage;

@@ -1,120 +1,104 @@
-# Marton Paulo's Portfolio and Personal Website
+# Marton Paulo's Portfolio
 
-<div>
-  <a href="https://github.com/martonpaulo/portfolio/blob/main/LICENSE">
-    <img
-      src="https://img.shields.io/github/license/martonpaulo/portfolio"
-      alt="License"
-    />
-  </a>
+![License](https://img.shields.io/github/license/martonpaulo/portfolio) ![Last Commit](https://img.shields.io/github/last-commit/martonpaulo/portfolio) ![React Version](https://img.shields.io/github/package-json/dependency-version/martonpaulo/portfolio/react) ![TypeScript Version](https://img.shields.io/github/package-json/dependency-version/martonpaulo/portfolio/dev/typescript) ![Test and Deploy Status](https://github.com/martonpaulo/portfolio/actions/workflows/deploy.yml/badge.svg)
 
-  <a href="https://github.com/martonpaulo/portfolio/commits/main/">
-    <img
-      src="https://img.shields.io/github/last-commit/martonpaulo/portfolio"
-      alt="Last Commit"
-    />
-  </a>
+Welcome to my portfolio hosted at [martonpaulo.com](https://www.martonpaulo.com). This website showcases my projects, skills, and professional journey. Built with modern technologies and optimized for performance, it reflects my passion for front-end development.
 
-  <a href="https://github.com/martonpaulo/portfolio/blob/main/package.json">
-    <img
-      src="https://img.shields.io/github/package-json/dependency-version/martonpaulo/portfolio/react"
-      alt="React Version"
-    />
-  </a>
-
-  <a href="https://github.com/search?q=repo%3Amartonpaulo%2Fportfolio++language%3ATypeScript">
-    <img
-      src="https://img.shields.io/github/package-json/dependency-version/martonpaulo/portfolio/dev/typescript"
-      alt="TypeScript Version"
-    />
-  </a>
-</div>
-
-<div>
-  <a href="https://github.com/martonpaulo/portfolio/actions/workflows/deploy.yml">
-    <img
-      src="https://github.com/martonpaulo/portfolio/actions/workflows/deploy.yml/badge.svg"
-      alt="Test and Deploy Status"
-    />
-  </a>
-</div>
-
-<br />
-
-Welcome to the personal website and portfolio of **Marton Paulo**, hosted at [martonpaulo.com](https://martonpaulo.com). This website showcases my projects and skills, built with **Next.js**, **React**, **TypeScript**, and **TailwindCSS**.
+---
 
 ## 🌐 Project Overview
 
-- **Frontend**: Built with Next.js, React, TypeScript, and TailwindCSS to provide a smooth and responsive user experience. I use shadcn/ui components and Lucid Icons for enhanced visuals.
-- **Backend**: The site uses Directus, a headless CMS, built with Docker.
-- **Deployment**:
-  - Frontend: hosted on GitHub Pages at [martonpaulo.com](https://martonpaulo.com)
-  - Backend: hosted on Railway at [martonpaulo.com/admin](https://directus.martonpaulo.com)
-  - Database: utilizes PostgreSQL hosted on AWS RDS
-  - Domain: managed through Hostinger
-  - Professional Email: powered by Zoho Mail at [info@martonpaulo.com](mailto:info@martonpaulo.com)
+### Frontend
+
+- **Technologies Used**: React, Next.js, TypeScript, Bulma CSS, Phosphor Icons
+- **Key Features**:
+  - responsive design
+  - interactive UI components
+  - dynamic data fetching with React Query
+
+### Backend
+
+- **CMS**: Directus (Dockerized Headless CMS)
+- **Database**: PostgreSQL hosted on AWS RDS
+
+### Deployment
+
+- **Frontend**: hosted on GitHub Pages ([martonpaulo.com](https://www.martonpaulo.com))
+- **Backend**: hosted on Railway ([directus.martonpaulo.com](https://directus.martonpaulo.com))
+- **Domain Management**: Hostinger
+- **Email**: professional email powered by Zoho Mail ([info@martonpaulo.com](mailto:info@martonpaulo.com))
 
 ## 🚀 Getting Started
 
-To start working on this project, clone the repository and install the dependencies:
+Follow these steps to set up the project locally:
 
 ```bash
+# Clone the repository
 git clone https://github.com/martonpaulo/portfolio.git
+
+# Navigate to the project directory
 cd portfolio
+
+# Install dependencies
 npm install
 ```
 
-## 📜 Available Scripts
+### Available Scripts
 
-In the project directory, you can run the following commands:
+- `npm run dev`: start the development server at `http://localhost:3000`
+- `npm run start`: start the production server at `http://localhost:3000`
+- `npm run build`: build the project for production
+- `npm run lint`: lint the codebase with ESLint
 
-- `npm run dev`: Starts the development server at `http://localhost:3000`
-- `npm run start`: Starts the production server at `http://localhost:3000`
-- `npm run build`: Builds the project for production, outputting to the `dist` folder
-- `npm run lint`: Lints the code using ESLint
+---
 
 ## 📋 To Do List
 
-Bugs and issues to fix:
+### Fixes
 
-- [ ] Fix hydration error in the console
-- [ ] Resolve favicon issues with Real Favicon Generator
-- [ ] Fix CORS problem
-- [ ] Change AWS admin password
-- [ ] Change DB name
-- [ ] Fix error while fetching data from the API
-- [ ] Refactor and remove warnings from the hooks
-- [ ] Fix useSkills hook to fetch data from the API
+- [x] fix API data fetching errors
+- [x] refactor hooks and remove warnings
+- [x] resolve hydration errors
+- [ ] fix navbar for mobile devices
+- [ ] address CORS issues
+- [ ] update AWS admin password
+- [ ] rename the database
 
-Planned features and improvements:
+### Features and Improvements
 
-- [x] Connect to the backend server for dynamic data fetching
-- [x] ~~Add a language switcher for English, Spanish, and Portuguese~~
-- [x] Add a blog or fetch posts from Medium and LinkedIn
-- [x] Include contact email: info@martonpaulo.com
-- [x] Create a 404 page
-- [ ] Implement smarter linking with URL redirects (e.g., [martonpaulo.com/projects/genius-game/live](http://martonpaulo.com/projects/genius-game/live))
-- [ ] Use the collection "tech_stack" to fetch the technologies used in each project
-- [ ] Understand the "sort" field in Directus
-- [ ] Add a mentors page
-- [ ] Reorganize the Next.js code for a better structure
-- [ ] Automatically reorder imports
-- [ ] Implement SEO optimizations for better search engine ranking
-- [ ] Create a footer with social media links
-- [ ] Refactor code to use reusable components
-- [ ] Add search and pagination for projects:
-  - [ ] Project tag search
-  - [ ] General search
-  - [ ] Pagination (limit to 10 projects per page)
-- [ ] Integrate Cloudflare Analytics
-- [ ] Add Google Analytics to track traffic sources (LinkedIn, GitHub, resume, email signature, etc.)
-- [ ] Enhance the design with personal photos and improved layout
+- [x] integrate backend for dynamic data fetching
+- [x] ~~add a language switcher for English, Spanish, and Portuguese~~
+- [x] ~~add a blog or fetch posts from Medium and LinkedIn~~
+- [x] ~~add light and dark mode switcher~~
+- [x] add contact email ([info@martonpaulo.com](mailto:info@martonpaulo.com))
+- [x] create a 404 error page
+- [x] refactor project initial code
+- [x] automatically reorder imports
+- [ ] design a homepage cover section
+- [ ] showcase projects on the homepage
+- [ ] add a logo to the navbar
+- [ ] implement caching for API requests
+- [ ] understand "sort" field in Directus API
+- [ ] create a Projects page with pagination (10 projects/page)
+- [ ] add tag filters to the Projects page
+- [ ] implement URL redirects for live projects paths
+- [ ] create a Mentors / References page
+- [ ] add a Skills section with technology icons
+- [ ] implement a work timeline
+- [ ] improve SEO with metadata from Directus API
+- [ ] integrate Cloudflare Analytics
+- [ ] integrate Google Analytics for all shared links
+- [ ] add a footer with social media links
+- [ ] enhance the design with personal photos
+
+---
 
 ## 🌟 Inspirations
 
-Here are some websites that inspired the design and functionality of this project:
+The design and functionality of this portfolio were inspired by:
 
 - [Duse Kenç](https://dusekenc.com/)
+- [Martha Monk Tolosa](https://www.marthatoulouse.com/)
 - [Tamal Sen](https://tamalsen.dev/)
 - [Dewald Els](https://dewaldels.com/)
 - [Yeabsira's Portfolio](https://yeabsiras-portfolio.vercel.app/)
@@ -123,6 +107,12 @@ Here are some websites that inspired the design and functionality of this projec
 - [Matt Farley](https://mattfarley.ca/)
 - [Frozen Hearth](https://frozenhearth.vercel.app/)
 
+---
+
 ## 📄 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+This project is licensed under the MIT License. For details, see the [LICENSE](LICENSE) file.
+
+---
+
+Thank you for visiting! Feel free to explore or reach out via [info@martonpaulo.com](mailto:info@martonpaulo.com).
