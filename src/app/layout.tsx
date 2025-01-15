@@ -3,10 +3,11 @@ import "@/styles/global.scss";
 import type { Metadata } from "next";
 import { Fira_Code, Poppins } from "next/font/google";
 
+import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
+import ReactQueryProvider from "@/context/queryProvider";
 import type { MetadataType } from "@/types/metadata";
 import { fetchSingleton } from "@/utils/fetchApi";
-import ReactQueryProvider from "@/utils/queryProvider";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -58,10 +59,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${firaCode.variable}`}>
-        <div className="container is-max-widescreen">
-          <Navbar />
-          <ReactQueryProvider>{children}</ReactQueryProvider>
-        </div>
+        <ReactQueryProvider>
+          <div className="container is-max-widescreen">
+            <Navbar />
+            {children}
+          </div>
+          <Footer />
+        </ReactQueryProvider>
       </body>
     </html>
   );

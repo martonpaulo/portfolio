@@ -5,15 +5,15 @@ import { FetchError } from "@/components/FetchError";
 interface MarkdownContainerProps {
   markdown: string;
   collection?: string | null;
-  isLoading?: boolean;
-  isError?: boolean;
+  isLoading: boolean;
+  isError: boolean;
 }
 
 export function MarkdownContainer({
   markdown,
   collection = null,
-  isLoading = false,
-  isError = false,
+  isLoading,
+  isError,
 }: MarkdownContainerProps) {
   if (isLoading) {
     return (
@@ -27,7 +27,7 @@ export function MarkdownContainer({
     );
   }
 
-  if (isError || markdown.trim().length === 0) {
+  if (isError || !markdown) {
     return <FetchError item={collection} />;
   }
 

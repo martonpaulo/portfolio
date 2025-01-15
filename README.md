@@ -59,9 +59,12 @@ npm install
 - [x] refactor hooks and remove warnings
 - [x] resolve hydration errors
 - [ ] fix navbar for mobile devices
+- [ ] fix websocket connection error
+- [ ] fix alert message
 - [ ] address CORS issues
 - [ ] update AWS admin password
 - [ ] rename the database
+- [ ] Footer should be a dumb component
 
 ### Features and Improvements
 
@@ -73,12 +76,18 @@ npm install
 - [x] create a 404 error page
 - [x] refactor project initial code
 - [x] automatically reorder imports
+- [x] create a Projects page
+- [x] add a footer with social media links
+- [ ] add links order
+- [ ] add Projects skeleton loader
+- [ ] learn about Cloudnary for image optimization
+- [ ] center image and open modal on project click
 - [ ] design a homepage cover section
 - [ ] showcase projects on the homepage
 - [ ] add a logo to the navbar
 - [ ] implement caching for API requests
 - [ ] understand "sort" field in Directus API
-- [ ] create a Projects page with pagination (10 projects/page)
+- [ ] add pagination to the Projects page
 - [ ] add tag filters to the Projects page
 - [ ] implement URL redirects for live projects paths
 - [ ] create a Mentors / References page
@@ -87,7 +96,6 @@ npm install
 - [ ] improve SEO with metadata from Directus API
 - [ ] integrate Cloudflare Analytics
 - [ ] integrate Google Analytics for all shared links
-- [ ] add a footer with social media links
 - [ ] enhance the design with personal photos
 
 ---

@@ -1,6 +1,7 @@
 import { readItems, readSingleton } from "@directus/sdk";
 
 import type { LinkType } from "@/types/link";
+import type { ProjectType } from "@/types/project";
 import directus from "@/utils/directus";
 
 async function handleRequest<T>(
@@ -57,4 +58,23 @@ export async function getText(collection: string) {
 
 export async function getLinks() {
   return fetchItems<LinkType[]>("links", { fields: ["id", "url", "label"] });
+}
+
+export async function getProjects() {
+  return fetchItems<ProjectType[]>("projects", {
+    fields: [
+      "id",
+      "name",
+      "logoUrl",
+      "publishedDate",
+      "description",
+      "liveDemoUrl",
+      "repositoryUrl",
+      "demoMediaUrl",
+      "isMaintenanceRequired",
+      "tags",
+      "techStack",
+    ],
+    sort: ["isMaintenanceRequired", "-publishedDate"],
+  });
 }
