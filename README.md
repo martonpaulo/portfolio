@@ -46,7 +46,6 @@ npm install
 ### Available Scripts
 
 - `npm run dev`: start the development server at `http://localhost:3000`
-- `npm run start`: start the production server at `http://localhost:3000`
 - `npm run build`: build the project for production
 - `npm run lint`: lint the codebase with ESLint
 
