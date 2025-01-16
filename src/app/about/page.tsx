@@ -2,8 +2,8 @@
 
 import { useQuery } from "@tanstack/react-query";
 
-import { MarkdownContainer } from "@/components/MarkdownContainer";
-import { getText } from "@/utils/fetchApi";
+import { getText } from "@/api/fetchApi";
+import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 
 const SUMMARY_COLLECTION = "summary";
 const INTERESTS_COLLECTION = "interests";
@@ -31,7 +31,7 @@ export default function About() {
     <section className="section is-medium">
       <div className="content">
         <h1>Summary</h1>
-        <MarkdownContainer
+        <MarkdownRenderer
           markdown={summaryData || ""}
           collection={SUMMARY_COLLECTION}
           isLoading={summaryIsLoading}
@@ -39,7 +39,7 @@ export default function About() {
         />
 
         <h1>Interests</h1>
-        <MarkdownContainer
+        <MarkdownRenderer
           markdown={interestsData || ""}
           collection={INTERESTS_COLLECTION}
           isLoading={interestsIsLoading}

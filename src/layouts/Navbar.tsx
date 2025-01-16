@@ -1,31 +1,42 @@
-import Link from "next/link";
+"use client";
 
-import pagesMetadata from "@/utils/pagesMetadata";
+import Link from "next/link";
+import { CldImage } from "next-cloudinary";
+import { useState } from "react";
+
+import pagesMetadata from "@/constants/pagesMetadata";
 
 export function Navbar() {
+  const [isMenuActive, setIsMenuActive] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuActive(!isMenuActive);
+  };
+
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <Link className="navbar-item" href="/">
-          {/* LOGO SVG */}
-          Home
+          <CldImage src="logo" alt="Portfolio's logo" width={32} height={32} />
         </Link>
 
-        <a
-          role="button"
-          className="navbar-burger"
+        <button
+          className={`navbar-burger ${isMenuActive ? "is-active" : ""}`}
           aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarBasicExample"
+          aria-expanded={isMenuActive ? "true" : "false"}
+          onClick={toggleMenu}
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
-        </a>
+        </button>
       </div>
 
-      <div id="navbarBasicExample" className="navbar-menu">
+      <div
+        id="navMenu"
+        className={`navbar-menu ${isMenuActive ? "is-active" : ""}`}
+      >
         <div className="navbar-start">
           {Object.values(pagesMetadata)
             .filter((page) => page.showInNavbar)

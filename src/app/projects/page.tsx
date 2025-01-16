@@ -2,8 +2,8 @@
 
 import { useQuery } from "@tanstack/react-query";
 
+import { getProjects } from "@/api/fetchApi";
 import { ProjectList } from "@/app/projects/ProjectList";
-import { getProjects } from "@/utils/fetchApi";
 
 export default function Projects() {
   const { data, isLoading, isError } = useQuery({

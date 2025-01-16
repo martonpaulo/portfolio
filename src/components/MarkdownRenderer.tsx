@@ -2,19 +2,19 @@ import ReactMarkdown from "react-markdown";
 
 import { FetchError } from "@/components/FetchError";
 
-interface MarkdownContainerProps {
+interface MarkdownRendererProps {
   markdown: string;
   collection?: string | null;
   isLoading: boolean;
   isError: boolean;
 }
 
-export function MarkdownContainer({
+export function MarkdownRenderer({
   markdown,
   collection = null,
   isLoading,
   isError,
-}: MarkdownContainerProps) {
+}: MarkdownRendererProps) {
   if (isLoading) {
     return (
       <div className="skeleton-lines">

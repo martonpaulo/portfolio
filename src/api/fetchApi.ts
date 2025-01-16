@@ -1,8 +1,8 @@
 import { readItems, readSingleton } from "@directus/sdk";
 
+import directus from "@/api/directus";
 import type { LinkType } from "@/types/link";
 import type { ProjectType } from "@/types/project";
-import directus from "@/utils/directus";
 
 async function handleRequest<T>(
   request: Promise<T>,

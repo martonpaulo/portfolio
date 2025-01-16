@@ -4,28 +4,15 @@
 
 Welcome to my portfolio hosted at [martonpaulo.com](https://www.martonpaulo.com). This website showcases my projects, skills, and professional journey. Built with modern technologies and optimized for performance, it reflects my passion for front-end development.
 
-## 🌐 Project Overview
+## 🌐 Tech Stack
 
-### Frontend
-
-- **Technologies Used**: React, Next.js, TypeScript, Bulma CSS, Phosphor Icons
-- **Key Features**:
-  - responsive design
-  - interactive UI components
-  - dynamic data fetching with React Query
-
-### Backend
-
-- **CMS**: Directus, dockerized Headless CMS
+- **Front-End**: React with TypeScript and Next.js for static site generation, styled with Bulma CSS, icons provided by Phosphor Icons, dynamic data fetching with React Query
+- **Hosting**: GitHub Pages via domain provided by Hostinger at ([martonpaulo.com](https://www.martonpaulo.com)) with CI/CD pipeline on GitHub Actions
+- **Back-End**: Directus headless CMS with a dockerized setup hosted on Railway at ([directus.martonpaulo.com](https://directus.martonpaulo.com))
 - **Database**: PostgreSQL hosted on AWS RDS
-
-### Hosting and Integrations
-
-- **Frontend**: hosted on GitHub Pages ([martonpaulo.com](https://www.martonpaulo.com))
-- **Backend**: hosted on Railway ([directus.martonpaulo.com](https://directus.martonpaulo.com))
-- **Domain Management**: Hostinger
-- **Email**: professional email powered by Zoho Mail ([info@martonpaulo.com](mailto:info@martonpaulo.com))
-- **Analytics and Link Management**: Google Analytics and Bitly
+- **Media Management**: Cloudinary for storing and optimization
+- **Analytics**: Google Analytics and Bitly for link tracking
+- **Professional Email**: powered by Zoho Mail at ([info@martonpaulo.com](mailto:info@martonpaulo.com)) with custom domain
 
 ## 🚀 Getting Started
 
@@ -55,13 +42,15 @@ npm install
 - [x] fix API data fetching errors
 - [x] refactor hooks and remove warnings
 - [x] resolve hydration errors
-- [ ] fix navbar for mobile devices
+- [x] ~~Footer should be a dumb component~~
+- [x] fix navbar for mobile devices
+- [ ] fix icon usage
 - [ ] fix websocket connection error
 - [ ] fix alert message
 - [ ] address CORS issues
 - [ ] update AWS admin password
 - [ ] rename the database
-- [ ] Footer should be a dumb component
+- [ ] fix all the projects
 
 ### Features and Improvements
 
@@ -76,13 +65,13 @@ npm install
 - [x] create a Projects page
 - [x] add a footer with social media links
 - [x] integrate Google Analytics for all shared links
+- [x] learn about Cloudnary for image optimization
+- [x] add a logo to the navbar
 - [ ] add links order
 - [ ] add Projects skeleton loader
-- [ ] learn about Cloudnary for image optimization
 - [ ] center image and open modal on project click
-- [ ] design a homepage cover section
+- [ ] improve the project design
 - [ ] showcase projects on the homepage
-- [ ] add a logo to the navbar
 - [ ] implement caching for API requests
 - [ ] understand "sort" field in Directus API
 - [ ] add pagination to the Projects page
@@ -91,9 +80,17 @@ npm install
 - [ ] create a Mentors / References page
 - [ ] add a Skills section with technology icons
 - [ ] implement a work timeline
-- [ ] improve SEO with metadata from Directus API
+- [ ] improve SEO with metadata from Directus API and add sitemap
 - [ ] integrate Cloudflare Analytics
 - [ ] enhance the design with personal photos
+- [ ] add a resume download link
+- [ ] add Framer Motion animations
+- [ ] validate SEO and accessibility with Lighthouse
+- [ ] use getStaticProps or getServerSideProps in Next.js for dynamic data optimization
+- [ ] add tests with Jest, React Testing Library and Cypress
+- [ ] prefetch data with React Query
+- [ ] CSP and HSTS security headers
+- [ ] is it necessary to implement a cookie banner?
 
 ## 🌟 Inspirations
 

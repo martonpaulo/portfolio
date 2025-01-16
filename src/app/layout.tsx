@@ -3,12 +3,13 @@ import "@/styles/global.scss";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Fira_Code, Poppins } from "next/font/google";
+import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
 
-import { Footer } from "@/components/Footer";
-import { Navbar } from "@/components/Navbar";
-import ReactQueryProvider from "@/context/queryProvider";
+import { fetchSingleton } from "@/api/fetchApi";
+import ReactQueryProvider from "@/contexts/ApiContextProvider";
+import { Footer } from "@/layouts/Footer";
+import { Navbar } from "@/layouts/Navbar";
 import type { MetadataType } from "@/types/metadata";
-import { fetchSingleton } from "@/utils/fetchApi";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -25,6 +26,8 @@ const firaCode = Fira_Code({
 
 export async function generateMetadata(): Promise<Metadata> {
   const metadata = await fetchSingleton<MetadataType>("metadata");
+  const ogImage = getCldOgImageUrl({ src: "logo", width: 1200, height: 630 });
+  const image = getCldImageUrl({ src: "logo", width: 192, height: 192 });
 
   return {
     title: metadata?.title || "Marton Paulo | Dev Portfolio",
@@ -46,9 +49,11 @@ export async function generateMetadata(): Promise<Metadata> {
       alternateLocale: ["pt", "es"],
       url: "https://www.martonpaulo.com",
       title: metadata?.title,
-      images: metadata?.icon,
+      images: ogImage,
     },
-    icons: metadata?.icon,
+    icons: {
+      icon: image,
+    },
   };
 }
 
@@ -59,10 +64,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${firaCode.variable}`}>
+      <body className={`${poppins.variable} ${firaCode.variable} antialiased`}>
         <ReactQueryProvider>
-          <div className="container is-max-widescreen">
-            <Navbar />
+          <Navbar />
+          <div className="container is-max-widescreen is-full-height-100vh">
             {children}
           </div>
           <Footer />

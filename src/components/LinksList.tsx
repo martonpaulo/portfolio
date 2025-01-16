@@ -1,6 +1,6 @@
 import { FetchError } from "@/components/FetchError";
+import { getIconMap } from "@/constants/linkConstants";
 import type { LinkType } from "@/types/link";
-import { getIconMap } from "@/utils/linkConstants";
 
 interface LinksListProps {
   links: LinkType[];

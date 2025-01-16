@@ -1,6 +1,6 @@
 import { FetchError } from "@/components/FetchError";
+import { getIconMap } from "@/constants/linkConstants";
 import type { LinkType } from "@/types/link";
-import { getIconMap } from "@/utils/linkConstants";
 
 function LinkButton({ isLoading = false, id = "", url = "", label = "" }) {
   return (
@@ -14,13 +14,13 @@ function LinkButton({ isLoading = false, id = "", url = "", label = "" }) {
   );
 }
 
-interface LinksBoxProps {
+interface LinksWrapperProps {
   links: LinkType[];
   isLoading: boolean;
   isError: boolean;
 }
 
-export function LinksBox({ links, isLoading, isError }: LinksBoxProps) {
+export function LinksWrapper({ links, isLoading, isError }: LinksWrapperProps) {
   if (isLoading) {
     return (
       <>

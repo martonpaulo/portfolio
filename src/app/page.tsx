@@ -2,9 +2,9 @@
 
 import { useQuery } from "@tanstack/react-query";
 
-import { LinksBox } from "@/components/LinksBox";
-import { MarkdownContainer } from "@/components/MarkdownContainer";
-import { getLinks, getText } from "@/utils/fetchApi";
+import { getLinks, getText } from "@/api/fetchApi";
+import { LinksWrapper } from "@/components/LinksWrapper";
+import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 
 export default function Home() {
   const {
@@ -29,7 +29,7 @@ export default function Home() {
     <>
       <section className="section is-medium">
         <div className="content">
-          <MarkdownContainer
+          <MarkdownRenderer
             markdown={summary || ""}
             collection="summary"
             isLoading={summaryIsLoading}
@@ -40,7 +40,7 @@ export default function Home() {
 
       <section className="section">
         <div className="content buttons is-centered">
-          <LinksBox
+          <LinksWrapper
             links={links || []}
             isLoading={linksIsLoading}
             isError={linksHasError}

@@ -2,8 +2,8 @@
 
 import { useQuery } from "@tanstack/react-query";
 
-import { LinksBox } from "@/components/LinksBox";
-import { getLinks } from "@/utils/fetchApi";
+import { getLinks } from "@/api/fetchApi";
+import { LinksWrapper } from "@/components/LinksWrapper";
 
 export default function Contact() {
   const { data, isLoading, isError } = useQuery({
@@ -14,7 +14,11 @@ export default function Contact() {
   return (
     <section className="section is-medium">
       <div className="content buttons is-centered">
-        <LinksBox links={data || []} isLoading={isLoading} isError={isError} />
+        <LinksWrapper
+          links={data || []}
+          isLoading={isLoading}
+          isError={isError}
+        />
       </div>
     </section>
   );

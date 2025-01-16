@@ -1,5 +1,5 @@
 const pagesMetadata = {
-  home: { label: "Homepage", path: "/", showInNavbar: false },
+  home: { label: "Home", path: "/", showInNavbar: true },
   projects: { label: "Projects", path: "/projects", showInNavbar: true },
   about: { label: "About Me", path: "/about", showInNavbar: true },
   contact: { label: "Contact", path: "/contact", showInNavbar: true },

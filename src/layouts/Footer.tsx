@@ -2,8 +2,8 @@
 
 import { useQuery } from "@tanstack/react-query";
 
+import { getLinks } from "@/api/fetchApi";
 import { LinksList } from "@/components/LinksList";
-import { getLinks } from "@/utils/fetchApi";
 
 export function Footer() {
   const { data, isLoading, isError } = useQuery({

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { CldImage } from "next-cloudinary";
 
 import { LinkButton } from "@/components/LinkButton";
 import type { ProjectType } from "@/types/project";
@@ -20,7 +20,7 @@ export function ProjectItem({ project }: ProjectItemProps) {
               {project.logoUrl && (
                 <div className="media-left">
                   <figure className="image is-48x48">
-                    <Image
+                    <CldImage
                       src={project.logoUrl}
                       alt={`${project.name} project's logo`}
                       width={48}
@@ -74,7 +74,7 @@ export function ProjectItem({ project }: ProjectItemProps) {
             <div className="column is-narrow">
               <div className="media" style={{ width: "256px" }}>
                 <figure className="image is-256x256">
-                  <Image
+                  <CldImage
                     src={project.demoMediaUrl}
                     alt={`${project.name} project's demo media`}
                     width={256}
