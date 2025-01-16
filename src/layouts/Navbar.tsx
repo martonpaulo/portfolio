@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { CldImage } from "next-cloudinary";
 import { useState } from "react";
 
@@ -8,6 +9,7 @@ import pagesMetadata from "@/constants/pagesMetadata";
 
 export function Navbar() {
   const [isMenuActive, setIsMenuActive] = useState(false);
+  const currentPath = usePathname();
 
   const toggleMenu = () => {
     setIsMenuActive(!isMenuActive);
@@ -41,9 +43,15 @@ export function Navbar() {
           {Object.values(pagesMetadata)
             .filter((page) => page.showInNavbar)
             .map((page) => (
-              <a key={page.path} className="navbar-item" href={page.path}>
+              <Link
+                key={page.path}
+                className={`navbar-item ${
+                  currentPath === page.path ? "is-active" : ""
+                }`}
+                href={page.path}
+              >
                 {page.label}
-              </a>
+              </Link>
             ))}
         </div>
       </div>

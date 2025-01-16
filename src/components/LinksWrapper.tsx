@@ -1,32 +1,26 @@
+import { ButtonWithIcon } from "@/components/ButtonWithIcon";
 import { FetchError } from "@/components/FetchError";
-import { getIconMap } from "@/constants/linkConstants";
 import type { LinkType } from "@/types/link";
-
-function LinkButton({ isLoading = false, id = "", url = "", label = "" }) {
-  return (
-    <button
-      className={`button is-medium ${isLoading ? "is-loading" : ""}`}
-      onClick={isLoading ? undefined : () => window.open(url, "_blank")}
-    >
-      <span className="icon">{isLoading ? null : getIconMap()[id]}</span>
-      <span>{label}</span>
-    </button>
-  );
-}
 
 interface LinksWrapperProps {
   links: LinkType[];
+  isSmall?: boolean;
   isLoading: boolean;
   isError: boolean;
 }
 
-export function LinksWrapper({ links, isLoading, isError }: LinksWrapperProps) {
+export function LinksWrapper({
+  links,
+  isSmall = false,
+  isLoading,
+  isError,
+}: LinksWrapperProps) {
   if (isLoading) {
     return (
       <>
-        <LinkButton isLoading />
-        <LinkButton isLoading />
-        <LinkButton isLoading />
+        <ButtonWithIcon isSmall={isSmall} isLoading />
+        <ButtonWithIcon isSmall={isSmall} isLoading />
+        <ButtonWithIcon isSmall={isSmall} isLoading />
       </>
     );
   }
@@ -38,8 +32,9 @@ export function LinksWrapper({ links, isLoading, isError }: LinksWrapperProps) {
   return (
     <>
       {links.map((link: LinkType) => (
-        <LinkButton
+        <ButtonWithIcon
           key={link.id}
+          isSmall={isSmall}
           id={link.id}
           url={link.url}
           label={link.label}

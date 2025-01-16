@@ -10,7 +10,7 @@ const INTERESTS_COLLECTION = "interests";
 
 export default function About() {
   const {
-    data: summaryData,
+    data: summaryData = "",
     isLoading: summaryIsLoading,
     isError: summaryHasError,
   } = useQuery({
@@ -19,7 +19,7 @@ export default function About() {
   });
 
   const {
-    data: interestsData,
+    data: interestsData = "",
     isLoading: interestsIsLoading,
     isError: interestsHasError,
   } = useQuery({
@@ -32,7 +32,7 @@ export default function About() {
       <div className="content">
         <h1>Summary</h1>
         <MarkdownRenderer
-          markdown={summaryData || ""}
+          markdown={summaryData}
           collection={SUMMARY_COLLECTION}
           isLoading={summaryIsLoading}
           isError={summaryHasError}
@@ -40,7 +40,7 @@ export default function About() {
 
         <h1>Interests</h1>
         <MarkdownRenderer
-          markdown={interestsData || ""}
+          markdown={interestsData}
           collection={INTERESTS_COLLECTION}
           isLoading={interestsIsLoading}
           isError={interestsHasError}

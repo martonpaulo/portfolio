@@ -6,7 +6,11 @@ import { getLinks } from "@/api/fetchApi";
 import { LinksWrapper } from "@/components/LinksWrapper";
 
 export default function Contact() {
-  const { data, isLoading, isError } = useQuery({
+  const {
+    data = [],
+    isLoading,
+    isError,
+  } = useQuery({
     queryKey: ["links"],
     queryFn: async () => await getLinks(),
   });
@@ -14,11 +18,7 @@ export default function Contact() {
   return (
     <section className="section is-medium">
       <div className="content buttons is-centered">
-        <LinksWrapper
-          links={data || []}
-          isLoading={isLoading}
-          isError={isError}
-        />
+        <LinksWrapper links={data} isLoading={isLoading} isError={isError} />
       </div>
     </section>
   );

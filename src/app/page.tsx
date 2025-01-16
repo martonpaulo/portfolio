@@ -8,7 +8,7 @@ import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 
 export default function Home() {
   const {
-    data: summary,
+    data: summary = "",
     isLoading: summaryIsLoading,
     isError: summaryHasError,
   } = useQuery({
@@ -17,7 +17,7 @@ export default function Home() {
   });
 
   const {
-    data: links,
+    data: links = [],
     isLoading: linksIsLoading,
     isError: linksHasError,
   } = useQuery({
@@ -30,7 +30,7 @@ export default function Home() {
       <section className="section is-medium">
         <div className="content">
           <MarkdownRenderer
-            markdown={summary || ""}
+            markdown={summary}
             collection="summary"
             isLoading={summaryIsLoading}
             isError={summaryHasError}
@@ -41,7 +41,7 @@ export default function Home() {
       <section className="section">
         <div className="content buttons is-centered">
           <LinksWrapper
-            links={links || []}
+            links={links}
             isLoading={linksIsLoading}
             isError={linksHasError}
           />
