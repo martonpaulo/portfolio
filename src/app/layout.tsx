@@ -26,7 +26,7 @@ const firaCode = Fira_Code({
 
 export async function generateMetadata(): Promise<Metadata> {
   const metadata = await fetchSingleton<MetadataType>("metadata");
-  const ogImage = getCldOgImageUrl({ src: "logo", width: 1200, height: 630 });
+  const ogImage = getCldOgImageUrl({ src: "cover" });
   const image = getCldImageUrl({ src: "logo", width: 192, height: 192 });
 
   return {

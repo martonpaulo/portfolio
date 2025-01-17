@@ -30,21 +30,25 @@ export default function About() {
   return (
     <section className="section is-medium">
       <div className="content">
-        <h1>Summary</h1>
-        <MarkdownRenderer
-          markdown={summaryData}
-          collection={SUMMARY_COLLECTION}
-          isLoading={summaryIsLoading}
-          isError={summaryHasError}
-        />
+        <div className="sub-section">
+          <h1>Summary</h1>
+          <MarkdownRenderer
+            markdown={summaryData}
+            collection={SUMMARY_COLLECTION}
+            isLoading={summaryIsLoading}
+            isError={summaryHasError}
+          />
+        </div>
 
-        <h1>Interests</h1>
-        <MarkdownRenderer
-          markdown={interestsData}
-          collection={INTERESTS_COLLECTION}
-          isLoading={interestsIsLoading}
-          isError={interestsHasError}
-        />
+        <div className="sub-section">
+          <h1>Interests</h1>
+          <MarkdownRenderer
+            markdown={interestsData}
+            collection={INTERESTS_COLLECTION}
+            isLoading={interestsIsLoading}
+            isError={interestsHasError}
+          />
+        </div>
       </div>
     </section>
   );

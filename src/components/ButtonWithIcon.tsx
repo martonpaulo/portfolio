@@ -1,11 +1,10 @@
-import { getIconMap } from "@/constants/linkConstants";
+import { iconMap } from "@/constants/linkConstants";
 
 interface ButtonWithIconProps {
   id?: string;
   url?: string;
   label?: string;
   isLoading?: boolean;
-  isSmall?: boolean;
 }
 
 export function ButtonWithIcon({
@@ -13,19 +12,16 @@ export function ButtonWithIcon({
   url = "",
   label = "",
   isLoading = false,
-  isSmall = false,
 }: ButtonWithIconProps) {
   const buttonState = isLoading ? "is-loading" : "";
-  const buttonSize = isSmall ? "is-small" : "is-medium";
-  const iconSize = isSmall ? 14 : 20;
-  const icon = isLoading ? null : getIconMap(iconSize)[id];
+  const icon = isLoading ? null : iconMap[id];
 
   return (
     <button
-      className={`button ${buttonState} ${buttonSize}`}
+      className={`button ${buttonState}`}
       onClick={isLoading ? undefined : () => window.open(url, "_blank")}
     >
-      <span className={`icon ${buttonSize}`}>{icon}</span>
+      <span className="icon">{icon}</span>
       <span>{label}</span>
     </button>
   );

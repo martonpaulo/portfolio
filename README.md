@@ -44,7 +44,7 @@ npm install
 - [x] resolve hydration errors
 - [x] ~~Footer should be a dumb component~~
 - [x] fix navbar for mobile devices
-- [ ] fix icon usage
+- [x] fix icon usage
 - [ ] fix websocket connection error
 - [ ] fix alert message
 - [ ] address CORS issues
@@ -67,7 +67,8 @@ npm install
 - [x] integrate Google Analytics for all shared links
 - [x] learn about Cloudnary for image optimization
 - [x] add a logo to the navbar
-- [ ] add links order
+- [x] add links order
+- [x] add a resume download link
 - [ ] add Projects skeleton loader
 - [ ] center image and open modal on project click
 - [ ] improve the project design
@@ -82,8 +83,7 @@ npm install
 - [ ] implement a work timeline
 - [ ] improve SEO with metadata from Directus API and add sitemap
 - [ ] integrate Cloudflare Analytics
-- [ ] enhance the design with personal photos
-- [ ] add a resume download link
+- [ ] enhance the design with personal photos: at Mundolingo Argentina, radio in Argentina, Poliglotar presentation
 - [ ] add Framer Motion animations
 - [ ] validate SEO and accessibility with Lighthouse
 - [ ] use getStaticProps or getServerSideProps in Next.js for dynamic data optimization
@@ -91,6 +91,7 @@ npm install
 - [ ] prefetch data with React Query
 - [ ] CSP and HSTS security headers
 - [ ] is it necessary to implement a cookie banner?
+- [ ] check favicongenerator.net
 
 ## 🌟 Inspirations
 

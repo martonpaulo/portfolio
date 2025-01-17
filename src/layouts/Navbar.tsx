@@ -19,7 +19,12 @@ export function Navbar() {
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <Link className="navbar-item" href="/">
-          <CldImage src="logo" alt="Portfolio's logo" width={32} height={32} />
+          <CldImage
+            src="white_logo"
+            alt="Portfolio's logo"
+            width={32}
+            height={32}
+          />
         </Link>
 
         <button

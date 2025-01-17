@@ -4,25 +4,13 @@ import type { LinkType } from "@/types/link";
 
 interface LinksWrapperProps {
   links: LinkType[];
-  isSmall?: boolean;
   isLoading: boolean;
   isError: boolean;
 }
 
-export function LinksWrapper({
-  links,
-  isSmall = false,
-  isLoading,
-  isError,
-}: LinksWrapperProps) {
+export function LinksWrapper({ links, isLoading, isError }: LinksWrapperProps) {
   if (isLoading) {
-    return (
-      <>
-        <ButtonWithIcon isSmall={isSmall} isLoading />
-        <ButtonWithIcon isSmall={isSmall} isLoading />
-        <ButtonWithIcon isSmall={isSmall} isLoading />
-      </>
-    );
+    return <ButtonWithIcon isLoading />;
   }
 
   if (isError || !links.length) {
@@ -34,7 +22,6 @@ export function LinksWrapper({
       {links.map((link: LinkType) => (
         <ButtonWithIcon
           key={link.id}
-          isSmall={isSmall}
           id={link.id}
           url={link.url}
           label={link.label}

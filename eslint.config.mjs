@@ -18,6 +18,7 @@ const eslintConfig = [
     rules: {
       "simple-import-sort/imports": "error",
       "simple-import-sort/exports": "error",
+      "no-console": ["error", { allow: ["warn", "error"] }],
     },
   },
   ...compat.extends("next/core-web-vitals", "next/typescript"),

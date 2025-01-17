@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import { getLinks } from "@/api/fetchApi";
 import { LinksWrapper } from "@/components/LinksWrapper";
+import { getOrderedLinks } from "@/constants/linkConstants";
 import type { LinkType } from "@/types/link";
 
 export function Footer() {
@@ -15,11 +16,6 @@ export function Footer() {
     queryKey: ["links"],
     queryFn: getLinks,
   });
-
-  const orderedIds = ["email", "linkedin", "github"];
-  const orderedLinks = orderedIds
-    .map((id) => data.find((link) => link.id === id))
-    .filter(Boolean) as LinkType[];
 
   return (
     <footer className="footer">
@@ -33,10 +29,9 @@ export function Footer() {
         >
           Source Code
         </a>
-        <div className="content buttons is-centered mt-5">
+        <div className="content buttons is-centered are-small mt-5">
           <LinksWrapper
-            links={orderedLinks}
-            isSmall
+            links={getOrderedLinks(data)}
             isLoading={isLoading}
             isError={isError}
           />

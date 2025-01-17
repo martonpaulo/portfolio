@@ -3,7 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { getLinks } from "@/api/fetchApi";
-import { LinksWrapper } from "@/components/LinksWrapper";
+import { ContactButtons } from "@/components/ContactButtons";
 
 export default function Contact() {
   const {
@@ -17,9 +17,7 @@ export default function Contact() {
 
   return (
     <section className="section is-medium">
-      <div className="content buttons is-centered">
-        <LinksWrapper links={data} isLoading={isLoading} isError={isError} />
-      </div>
+      <ContactButtons links={data} isLoading={isLoading} isError={isError} />
     </section>
   );
 }

@@ -12,6 +12,7 @@ export function ProjectList({
   isLoading,
   isError,
 }: ProjectListProps) {
+  // eslint-disable-next-line no-console
   console.log(projects, isLoading, isError);
 
   return (

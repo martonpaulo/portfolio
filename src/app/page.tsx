@@ -3,7 +3,8 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { getLinks, getText } from "@/api/fetchApi";
-import { LinksWrapper } from "@/components/LinksWrapper";
+import { ContactButtons } from "@/components/ContactButtons";
+import { Cover } from "@/components/Cover";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 
 export default function Home() {
@@ -28,6 +29,10 @@ export default function Home() {
   return (
     <>
       <section className="section is-medium">
+        <Cover />
+      </section>
+
+      <section className="section is-medium">
         <div className="content">
           <MarkdownRenderer
             markdown={summary}
@@ -38,14 +43,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="content buttons is-centered">
-          <LinksWrapper
-            links={links}
-            isLoading={linksIsLoading}
-            isError={linksHasError}
-          />
-        </div>
+      <section className="section is-medium">
+        <ContactButtons
+          links={links}
+          isLoading={linksIsLoading}
+          isError={linksHasError}
+        />
       </section>
     </>
   );

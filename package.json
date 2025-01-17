@@ -1,6 +1,24 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
+  "license": "MIT",
+  "homepage": "https://www.martonpaulo.com",
+  "author": {
+    "name": "Marton Paulo",
+    "email": "info@martonpaulo.com",
+    "url": "https://www.martonpaulo.com"
+  },
+  "description": "A flexible icon family for interfaces, diagrams, presentations — whatever, really.",
+  "keywords": [
+    "portfolio",
+    "developer",
+    "front-end",
+    "react",
+    "javascript",
+    "typescript",
+    "next.js"
+  ],
+  "repository": "github:martonpaulo/portfolio",
   "private": true,
   "scripts": {
     "dev": "next dev",
