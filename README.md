@@ -14,7 +14,7 @@ Welcome to my portfolio hosted at [martonpaulo.com](https://www.martonpaulo.com)
 - **Analytics**: Google Analytics and Bitly for link tracking
 - **Professional Email**: powered by Zoho Mail at ([info@martonpaulo.com](mailto:info@martonpaulo.com)) with custom domain
 
-## 🚀 Getting Started
+## 🚀 Setting Up the Environment
 
 Follow these steps to set up the project locally:
 
@@ -35,6 +35,16 @@ npm install
 - `npm run build`: build the project for production
 - `npm run lint`: lint the codebase with ESLint
 
+### Disclaimers
+
+#### CORS Issues
+
+To avoid CORS issues when running the project locally, you may need to use a browser extension that enables CORS. This is required because the backend is hosted on a different domain.
+
+#### Websocket Connection Error
+
+During local development, you may encounter a WebSocket error in the console. This is related to the Hot Module Replacement (HMR) feature in Next.js. It is not an issue in production, as HMR is only used during local development and does not affect static site generation. You can safely ignore this warning.
+
 ## 📋 To Do List
 
 ### Fixes
@@ -45,9 +55,9 @@ npm install
 - [x] ~~Footer should be a dumb component~~
 - [x] fix navbar for mobile devices
 - [x] fix icon usage
-- [ ] fix websocket connection error
+- [x] address CORS issues
+- [x] fix websocket connection error
 - [ ] fix alert message
-- [ ] address CORS issues
 - [ ] update AWS admin password
 - [ ] rename the database
 - [ ] fix all the projects
