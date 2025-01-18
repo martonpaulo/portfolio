@@ -1,20 +1,7 @@
-import { readItems, readSingleton } from "@directus/sdk";
+import { aggregate, readItems, readSingleton } from "@directus/sdk";
 
 import directus from "@/api/directus";
-import type { LinkType } from "@/types/link";
-import type { ProjectType } from "@/types/project";
-
-async function handleRequest<T>(
-  request: Promise<T>,
-  errorMessage: string
-): Promise<T> {
-  try {
-    return await request;
-  } catch (error) {
-    console.error(`${errorMessage}:`, error);
-    throw error;
-  }
-}
+import { handleRequest } from "@/api/helpers";
 
 export async function fetchItems<T>(
   collection: string,
@@ -48,33 +35,23 @@ export async function fetchSingleton<T>(
   return result;
 }
 
-export async function getText(collection: string) {
-  const { content } = await fetchSingleton<{ content: string }>(collection, {
-    fields: "content",
-  });
+export async function fetchTotalItemCount(collection: string): Promise<number> {
+  const result = await handleRequest(
+    directus.request(
+      aggregate(collection, {
+        aggregate: { count: "*" },
+      })
+    ) as Promise<{ count: string }[]>,
+    `Error fetching singleton "${collection}" item`
+  );
 
-  return content;
-}
+  const count = parseInt(result[0]?.count);
 
-export async function getLinks() {
-  return fetchItems<LinkType[]>("links", { fields: ["id", "url", "label"] });
-}
+  if (!count) {
+    throw new Error(
+      `Total item count not found for collection "${collection}"`
+    );
+  }
 
-export async function getProjects() {
-  return fetchItems<ProjectType[]>("projects", {
-    fields: [
-      "id",
-      "name",
-      "logoUrl",
-      "publishedDate",
-      "description",
-      "liveDemoUrl",
-      "repositoryUrl",
-      "demoMediaUrl",
-      "isMaintenanceRequired",
-      "tags",
-      "techStack",
-    ],
-    sort: ["isMaintenanceRequired", "-publishedDate"],
-  });
+  return count;
 }

@@ -2,8 +2,8 @@
 
 import { useQuery } from "@tanstack/react-query";
 
-import { getLinks, getText } from "@/api/fetchApi";
-import { ContactButtons } from "@/components/ContactButtons";
+import { getLinks, getText } from "@/api/services";
+import { ContactsContainer } from "@/components/contacts/ContactsContainer";
 import { Cover } from "@/components/Cover";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 
@@ -44,7 +44,7 @@ export default function Home() {
       </section>
 
       <section className="section is-medium">
-        <ContactButtons
+        <ContactsContainer
           links={links}
           isLoading={linksIsLoading}
           isError={linksHasError}

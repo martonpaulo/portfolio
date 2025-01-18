@@ -1,19 +1,12 @@
-import { useState } from "react";
-
 interface FetchErrorProps {
   item?: string | null;
 }
 
 export function FetchError({ item }: FetchErrorProps) {
-  const [isVisible, setIsVisible] = useState(true);
-
-  if (!isVisible) return null;
-
   return (
-    <div className="notification is-danger is-light">
-      <button className="delete" onClick={() => setIsVisible(false)} />
+    <div className="notification is-danger is-light pt-2">
       <p>
-        <strong>Error:</strong> failed to fetch{" "}
+        <strong>Error:</strong> failed to load{" "}
         <code>{item ? `${item}` : ""}</code> data.
       </p>
     </div>

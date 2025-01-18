@@ -1,4 +1,6 @@
 import { ProjectItem } from "@/app/projects/ProjectItem";
+import { ProjectSkeleton } from "@/app/projects/ProjectSkeleton";
+import { FetchError } from "@/components/FetchError";
 import type { ProjectType } from "@/types/project";
 
 interface ProjectListProps {
@@ -12,8 +14,19 @@ export function ProjectList({
   isLoading,
   isError,
 }: ProjectListProps) {
-  // eslint-disable-next-line no-console
-  console.log(projects, isLoading, isError);
+  if (isLoading) {
+    return (
+      <>
+        <ProjectSkeleton />
+        <ProjectSkeleton />
+        <ProjectSkeleton />
+      </>
+    );
+  }
+
+  if (isError || !projects.length) {
+    return <FetchError item="projects" />;
+  }
 
   return (
     <>

@@ -57,7 +57,7 @@ During local development, you may encounter a WebSocket error in the console. Th
 - [x] fix icon usage
 - [x] address CORS issues
 - [x] fix websocket connection error
-- [ ] fix alert message
+- [x] fix alert message
 - [ ] update AWS admin password
 - [ ] rename the database
 - [ ] fix all the projects
@@ -79,13 +79,13 @@ During local development, you may encounter a WebSocket error in the console. Th
 - [x] add a logo to the navbar
 - [x] add links order
 - [x] add a resume download link
-- [ ] add Projects skeleton loader
+- [x] add Projects skeleton loader
+- [x] understand "sort" field in Directus API
+- [x] add pagination to the Projects page
 - [ ] center image and open modal on project click
 - [ ] improve the project design
 - [ ] showcase projects on the homepage
 - [ ] implement caching for API requests
-- [ ] understand "sort" field in Directus API
-- [ ] add pagination to the Projects page
 - [ ] add tag filters to the Projects page
 - [ ] implement URL redirects for live projects paths
 - [ ] create a Mentors / References page
@@ -116,6 +116,10 @@ The design and functionality of this portfolio were inspired by:
 - [Ramma Heshwari](https://www.rammaheshwari.com/)
 - [Matt Farley](https://mattfarley.ca/)
 - [Frozen Hearth](https://frozenhearth.vercel.app/)
+
+## 📝 References
+
+The pagination algorithm used in this project is based on the implementation by Zac Fukuda. You can find more details about it [here](https://www.zacfukuda.com/blog/pagination-algorithm).
 
 ## 📄 License
 

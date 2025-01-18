@@ -2,8 +2,8 @@
 
 import { useQuery } from "@tanstack/react-query";
 
-import { getLinks } from "@/api/fetchApi";
-import { LinksWrapper } from "@/components/LinksWrapper";
+import { getLinks } from "@/api/services";
+import { ButtonsContainer } from "@/components/contacts/ButtonsContainer";
 import { getOrderedLinks } from "@/constants/linkConstants";
 import type { LinkType } from "@/types/link";
 
@@ -30,7 +30,7 @@ export function Footer() {
           Source Code
         </a>
         <div className="content buttons is-centered are-small mt-5">
-          <LinksWrapper
+          <ButtonsContainer
             links={getOrderedLinks(data)}
             isLoading={isLoading}
             isError={isError}

@@ -2,7 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 
-import { getText } from "@/api/fetchApi";
+import { getText } from "@/api/services";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 
 const SUMMARY_COLLECTION = "summary";
