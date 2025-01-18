@@ -2,6 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { usePathname, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 import { getProjects, getTotalProjectCount } from "@/api/services";
 import { ProjectList } from "@/app/projects/ProjectList";
@@ -9,7 +10,7 @@ import { PaginationContainer } from "@/components/pagination/PaginationContainer
 
 const ITEMS_PER_PAGE = 10;
 
-export default function Projects() {
+function ProjectsContent() {
   const pathname = usePathname();
   const pageParam = useSearchParams().get("page");
   const page = pageParam ? parseInt(pageParam) : 1;
@@ -29,7 +30,7 @@ export default function Projects() {
   });
 
   return (
-    <section className="section is-medium">
+    <>
       <div className="pb-6">
         <ProjectList projects={data} isLoading={isLoading} isError={isError} />
       </div>
@@ -42,6 +43,20 @@ export default function Projects() {
           totalItemCount={totalProjectCount}
         />
       </div>
+    </>
+  );
+}
+
+export default function Projects() {
+  return (
+    <section className="section is-medium">
+      <Suspense
+        fallback={
+          <ProjectList projects={[]} isLoading={true} isError={false} />
+        }
+      >
+        <ProjectsContent />
+      </Suspense>
     </section>
   );
 }
