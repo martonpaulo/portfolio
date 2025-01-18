@@ -7,12 +7,12 @@ Welcome to my portfolio hosted at [martonpaulo.com](https://www.martonpaulo.com)
 ## 🌐 Tech Stack
 
 - **Front-End**: React with TypeScript and Next.js for static site generation, styled with Bulma CSS, icons provided by Phosphor Icons, dynamic data fetching with React Query
-- **Hosting**: GitHub Pages via domain provided by Hostinger at ([martonpaulo.com](https://www.martonpaulo.com)) with CI/CD pipeline on GitHub Actions
-- **Back-End**: Directus headless CMS with a dockerized setup hosted on Railway at ([directus.martonpaulo.com](https://directus.martonpaulo.com))
+- **Hosting**: GitHub Pages via domain provided by Hostinger at [martonpaulo.com](https://www.martonpaulo.com) with CI/CD pipeline on GitHub Actions
+- **Back-End**: Directus headless CMS with a dockerized setup hosted on Railway at [directus.martonpaulo.com](https://directus.martonpaulo.com)
 - **Database**: PostgreSQL hosted on AWS RDS
 - **Media Management**: Cloudinary for storing and optimization
 - **Analytics**: Google Analytics and Bitly for link tracking
-- **Professional Email**: powered by Zoho Mail at ([info@martonpaulo.com](mailto:info@martonpaulo.com)) with custom domain
+- **Professional Email**: powered by Zoho Mail at [info@martonpaulo.com](mailto:info@martonpaulo.com) with custom domain
 
 ## 🚀 Setting Up the Environment
 
@@ -68,7 +68,7 @@ During local development, you may encounter a WebSocket error in the console. Th
 - [x] ~~add a language switcher for English, Spanish, and Portuguese~~
 - [x] ~~add a blog or fetch posts from Medium and LinkedIn~~
 - [x] ~~add light and dark mode switcher~~
-- [x] add contact email ([info@martonpaulo.com](mailto:info@martonpaulo.com))
+- [x] add contact email
 - [x] create a 404 error page
 - [x] refactor project initial code
 - [x] automatically reorder imports
