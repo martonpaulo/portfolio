@@ -84,6 +84,7 @@ a {
   height: 20rem;
 }
 
-.link-disabled {
+.is-disabled,
+.pointer-events-none {
   pointer-events: none;
 }

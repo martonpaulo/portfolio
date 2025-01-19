@@ -15,7 +15,7 @@ export function PaginationItem({
     <Link
       href={href}
       className={`pagination-link ${
-        isCurrent ? "is-current link-disabled" : ""
+        isCurrent ? "is-current pointer-events-none" : ""
       }`}
       aria-label={`${isCurrent ? "Page " : "Go to page "} ${href}`}
       aria-current={isCurrent ? "page" : undefined}

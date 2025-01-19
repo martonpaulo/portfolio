@@ -2,59 +2,16 @@ import "@/styles/global.scss";
 
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
-import { Fira_Code, Poppins } from "next/font/google";
-import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
+import React from "react";
 
-import { fetchSingleton } from "@/api/fetchApi";
 import ReactQueryProvider from "@/contexts/ApiContextProvider";
 import { Footer } from "@/layouts/Footer";
 import { Navbar } from "@/layouts/Navbar";
-import type { MetadataType } from "@/types/metadata";
-
-const poppins = Poppins({
-  variable: "--font-poppins",
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const firaCode = Fira_Code({
-  variable: "--font-fira-code",
-  subsets: ["latin"],
-  display: "swap",
-});
+import { firaCode, poppins } from "@/styles/fonts";
+import { createPageMetadata } from "@/utils/metadataGenerator";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metadata = await fetchSingleton<MetadataType>("metadata");
-  const ogImage = getCldOgImageUrl({ src: "cover" });
-  const image = getCldImageUrl({ src: "logo", width: 192, height: 192 });
-
-  return {
-    title: metadata?.title || "Marton Paulo | Dev Portfolio",
-    description: metadata?.description || "Frontend Developer Portfolio",
-    keywords: metadata?.keywords || "frontend, developer, portfolio",
-    robots: metadata?.robots,
-    generator: "Next.js",
-    authors: {
-      url: "https://www.martonpaulo.com",
-      name: "Marton Paulo",
-    },
-    openGraph: {
-      type: "website",
-      description: metadata?.description,
-      emails: metadata?.email,
-      phoneNumbers: metadata?.phone,
-      siteName: metadata?.title,
-      locale: "en",
-      alternateLocale: ["pt", "es"],
-      url: "https://www.martonpaulo.com",
-      title: metadata?.title,
-      images: ogImage,
-    },
-    icons: {
-      icon: image,
-    },
-  };
+  return await createPageMetadata();
 }
 
 export default function RootLayout({
@@ -64,16 +21,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${firaCode.variable} antialiased`}>
-        <ReactQueryProvider>
+      <ReactQueryProvider>
+        <body
+          className={`${poppins.variable} ${firaCode.variable} antialiased`}
+        >
           <Navbar />
           <div className="container is-max-widescreen is-full-height-100vh">
             {children}
           </div>
           <Footer />
-        </ReactQueryProvider>
-      </body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
+        </body>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
+      </ReactQueryProvider>
     </html>
   );
 }

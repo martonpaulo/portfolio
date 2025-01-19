@@ -1,4 +1,4 @@
-export type MetadataType = {
+export type GlobalMetadataType = {
   title: string;
   description: string;
   keywords: string;

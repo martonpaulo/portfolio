@@ -4,6 +4,7 @@ import {
   fetchTotalItemCount,
 } from "@/api/fetchApi";
 import type { LinkType } from "@/types/link";
+import type { GlobalMetadataType } from "@/types/metadata";
 import type { ProjectType } from "@/types/project";
 
 export async function getText(collection: string) {
@@ -12,6 +13,10 @@ export async function getText(collection: string) {
   });
 
   return content;
+}
+
+export async function getMetadata() {
+  return fetchSingleton<GlobalMetadataType>("metadata");
 }
 
 export async function getLinks() {

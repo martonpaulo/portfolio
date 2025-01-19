@@ -1,5 +1,5 @@
+import { ContactButton } from "@/components/contacts/ContactButton";
 import { FetchError } from "@/components/FetchError";
-import { IconButton } from "@/components/IconButton";
 import { LoadingButton } from "@/components/LoadingButton";
 import { iconMap } from "@/constants/linkConstants";
 import type { LinkType } from "@/types/link";
@@ -24,11 +24,11 @@ export function ButtonsContainer({
   return (
     <>
       {links.map((link: LinkType) => (
-        <IconButton
+        <ContactButton
           key={link.id}
           icon={iconMap[link.id]}
           label={link.label}
-          onClick={() => window.open(link.url, "_blank")}
+          url={link.url}
         />
       ))}
     </>

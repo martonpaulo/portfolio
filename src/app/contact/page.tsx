@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import { getLinks } from "@/api/services";
 import { ContactsContainer } from "@/components/contacts/ContactsContainer";
+import { pagesMetadata } from "@/constants/pagesMetadata";
 
 export default function Contact() {
   const {
@@ -16,8 +17,16 @@ export default function Contact() {
   });
 
   return (
-    <section className="section is-medium">
-      <ContactsContainer links={data} isLoading={isLoading} isError={isError} />
-    </section>
+    <>
+      <title>{pagesMetadata.contact.pageTitle}</title>
+
+      <section className="section is-medium">
+        <ContactsContainer
+          links={data}
+          isLoading={isLoading}
+          isError={isError}
+        />
+      </section>
+    </>
   );
 }

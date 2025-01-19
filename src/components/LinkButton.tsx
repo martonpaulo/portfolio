@@ -1,13 +1,27 @@
+import { handleAnalyticsClick } from "@/utils/clickTracker";
+
 interface LinkButtonProps {
+  category: string;
+  eventLabel: string;
   url: string;
   text: string;
 }
 
-export function LinkButton({ url, text }: LinkButtonProps) {
+export function LinkButton({
+  category,
+  eventLabel,
+  url,
+  text,
+}: LinkButtonProps) {
+  const handleClick = () => {
+    handleAnalyticsClick(category, eventLabel, text);
+    window.open(url, "_blank");
+  };
+
   return (
     <button
       className="button is-link"
-      onClick={url ? () => window.open(url, "_blank") : undefined}
+      onClick={url ? () => handleClick : undefined}
       disabled={url ? false : true}
     >
       {text}

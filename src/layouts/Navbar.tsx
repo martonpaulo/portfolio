@@ -5,11 +5,11 @@ import { usePathname } from "next/navigation";
 import { CldImage } from "next-cloudinary";
 import { useState } from "react";
 
-import pagesMetadata from "@/constants/pagesMetadata";
+import { pagesMetadata } from "@/constants/pagesMetadata";
 
 export function Navbar() {
   const [isMenuActive, setIsMenuActive] = useState(false);
-  const currentPath = usePathname();
+  const currentPathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuActive(!isMenuActive);
@@ -49,11 +49,11 @@ export function Navbar() {
             .filter((page) => page.showInNavbar)
             .map((page) => (
               <Link
-                key={page.path}
+                key={page.pathname}
                 className={`navbar-item ${
-                  currentPath === page.path ? "is-active" : ""
+                  currentPathname === page.pathname ? "is-active" : ""
                 }`}
-                href={page.path}
+                href={page.pathname}
               >
                 {page.label}
               </Link>

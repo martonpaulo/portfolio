@@ -49,8 +49,18 @@ export function ProjectItem({ project }: ProjectItemProps) {
             <div className="content">{project.description}</div>
 
             <div className="buttons">
-              <LinkButton url={project.liveDemoUrl} text="Live Demo" />
-              <LinkButton url={project.repositoryUrl} text="Source Code" />
+              <LinkButton
+                category="project"
+                eventLabel={project.name}
+                url={project.liveDemoUrl}
+                text="Live Demo"
+              />
+              <LinkButton
+                category="project"
+                eventLabel={project.name}
+                url={project.repositoryUrl}
+                text="Source Code"
+              />
             </div>
 
             <div className="tags">

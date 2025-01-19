@@ -7,6 +7,7 @@ import { Suspense } from "react";
 import { getProjects, getTotalProjectCount } from "@/api/services";
 import { ProjectList } from "@/app/projects/ProjectList";
 import { PaginationContainer } from "@/components/pagination/PaginationContainer";
+import { pagesMetadata } from "@/constants/pagesMetadata";
 
 const ITEMS_PER_PAGE = 10;
 
@@ -49,14 +50,18 @@ function ProjectsContent() {
 
 export default function Projects() {
   return (
-    <section className="section is-medium">
-      <Suspense
-        fallback={
-          <ProjectList projects={[]} isLoading={true} isError={false} />
-        }
-      >
-        <ProjectsContent />
-      </Suspense>
-    </section>
+    <>
+      <title>{pagesMetadata.projects.pageTitle}</title>
+
+      <section className="section is-medium">
+        <Suspense
+          fallback={
+            <ProjectList projects={[]} isLoading={true} isError={false} />
+          }
+        >
+          <ProjectsContent />
+        </Suspense>
+      </section>
+    </>
   );
 }

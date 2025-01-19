@@ -30,9 +30,7 @@ export function PaginationContainer({
       {/* previous page button */}
       <Link
         href={`${pathname}?page=${prev}`}
-        className={`pagination-previous ${
-          prev ? "" : "is-disabled link-disabled"
-        }`}
+        className={`pagination-previous ${prev ? "" : "is-disabled"}`}
         aria-label="Go to previous page"
       >
         Previous page
@@ -42,7 +40,7 @@ export function PaginationContainer({
 
       <Link
         href={`${pathname}?page=${next}`}
-        className={`pagination-next ${next ? "" : "is-disabled link-disabled"}`}
+        className={`pagination-next ${next ? "" : "is-disabled"}`}
         aria-label="Go to next page"
       >
         Next page

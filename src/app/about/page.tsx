@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import { getText } from "@/api/services";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
+import { pagesMetadata } from "@/constants/pagesMetadata";
 
 const SUMMARY_COLLECTION = "summary";
 const INTERESTS_COLLECTION = "interests";
@@ -28,28 +29,32 @@ export default function About() {
   });
 
   return (
-    <section className="section is-medium">
-      <div className="content">
-        <div className="sub-section">
-          <h1>Summary</h1>
-          <MarkdownRenderer
-            markdown={summaryData}
-            collection={SUMMARY_COLLECTION}
-            isLoading={summaryIsLoading}
-            isError={summaryHasError}
-          />
-        </div>
+    <>
+      <title>{pagesMetadata.about.pageTitle}</title>
 
-        <div className="sub-section">
-          <h1>Interests</h1>
-          <MarkdownRenderer
-            markdown={interestsData}
-            collection={INTERESTS_COLLECTION}
-            isLoading={interestsIsLoading}
-            isError={interestsHasError}
-          />
+      <section className="section is-medium">
+        <div className="content">
+          <div className="sub-section">
+            <h1>Summary</h1>
+            <MarkdownRenderer
+              markdown={summaryData}
+              collection={SUMMARY_COLLECTION}
+              isLoading={summaryIsLoading}
+              isError={summaryHasError}
+            />
+          </div>
+
+          <div className="sub-section">
+            <h1>Interests</h1>
+            <MarkdownRenderer
+              markdown={interestsData}
+              collection={INTERESTS_COLLECTION}
+              isLoading={interestsIsLoading}
+              isError={interestsHasError}
+            />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
