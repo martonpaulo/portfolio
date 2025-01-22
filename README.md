@@ -82,6 +82,7 @@ During local development, you may encounter a WebSocket error in the console. Th
 - [x] add Projects skeleton loader
 - [x] understand "sort" field in Directus API
 - [x] add pagination to the Projects page
+- [ ] create a feedback page
 - [ ] center image and open modal on project click
 - [ ] improve the project design
 - [ ] showcase projects on the homepage
