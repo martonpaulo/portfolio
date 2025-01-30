@@ -21,7 +21,7 @@ export function LinkButton({
   return (
     <button
       className="button is-link"
-      onClick={url ? () => handleClick : undefined}
+      onClick={url ? handleClick : undefined}
       disabled={url ? false : true}
     >
       {text}
