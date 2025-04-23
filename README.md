@@ -1,5 +1,7 @@
 # Marton Paulo's Portfolio
 
+**IMPORTANT: This project is a work in progress. The design and functionality may change over time as I continue to improve it. Please check back later for updates.**
+
 ![License](https://img.shields.io/github/license/martonpaulo/portfolio) ![Last Commit](https://img.shields.io/github/last-commit/martonpaulo/portfolio) ![React Version](https://img.shields.io/github/package-json/dependency-version/martonpaulo/portfolio/react) ![TypeScript Version](https://img.shields.io/github/package-json/dependency-version/martonpaulo/portfolio/dev/typescript) ![Test and Deploy Status](https://github.com/martonpaulo/portfolio/actions/workflows/deploy.yml/badge.svg)
 
 Welcome to my portfolio hosted at [martonpaulo.com](https://www.martonpaulo.com). This website showcases my projects, skills, and professional journey. Built with modern technologies and optimized for performance, it reflects my passion for front-end development.
